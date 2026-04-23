@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bfhx6iq054kbp"]
+[gd_scene load_steps=55 format=3 uid="uid://bfhx6iq054kbp"]
 
 [ext_resource type="Script" uid="uid://qnypwr65sxq3" path="res://Scripts/Player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://bmq2244ugvmit" path="res://Assets/Characters/Blue Units/Lancer/Lancer_Idle.png" id="1_v0iea"]
@@ -438,22 +438,92 @@ _data = {
 &"Run_right": SubResource("Animation_yh6i2")
 }
 
-[node name="Player_standard" type="Node2D"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fkybt"]
+animation = &"Idle_left"
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_x3wgy"]
+animation = &"Idle_right"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_3smsa"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_fkybt")
+blend_point_0/pos = Vector2(-1, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_x3wgy")
+blend_point_1/pos = Vector2(1, 0)
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_fkybt"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_8erm5"]
+graph_offset = Vector2(-371.282, 72.4819)
+nodes/Idle_bs2D/node = SubResource("AnimationNodeBlendSpace2D_3smsa")
+nodes/Idle_bs2D/position = Vector2(80, 120)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_fkybt")
+nodes/TimeScale/position = Vector2(320, 180)
+nodes/output/position = Vector2(580, 240)
+node_connections = [&"TimeScale", 0, &"Idle_bs2D", &"output", 0, &"TimeScale"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3smsa"]
+animation = &"Idle_left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8erm5"]
+animation = &"Run_right"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_f1ek2"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_3smsa")
+blend_point_0/pos = Vector2(-1, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_8erm5")
+blend_point_1/pos = Vector2(1, 0)
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_tx1dd"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_f1ek2"]
+nodes/Run_bs2D/node = SubResource("AnimationNodeBlendSpace2D_f1ek2")
+nodes/Run_bs2D/position = Vector2(151.25, 148.83)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_tx1dd")
+nodes/TimeScale/position = Vector2(360, 180)
+nodes/output/position = Vector2(520, 240)
+node_connections = [&"TimeScale", 0, &"Run_bs2D", &"output", 0, &"TimeScale"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tx1dd"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gymyn"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pu2lt"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ukyrk"]
+"states/Idle /node" = SubResource("AnimationNodeBlendTree_8erm5")
+"states/Idle /position" = Vector2(332, 52)
+states/Run/node = SubResource("AnimationNodeBlendTree_f1ek2")
+states/Run/position = Vector2(332, 166)
+transitions = ["Start", "Idle ", SubResource("AnimationNodeStateMachineTransition_tx1dd"), "Idle ", "Run", SubResource("AnimationNodeStateMachineTransition_gymyn"), "Run", "Idle ", SubResource("AnimationNodeStateMachineTransition_pu2lt")]
+graph_offset = Vector2(-69.4681, -398)
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 9
 script = ExtResource("1_cvnsp")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_f60y1")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(3, 5)
 sprite_frames = SubResource("SpriteFrames_v0iea")
 animation = &"Idle"
 autoplay = "Idle"
 flip_h = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_3smsa")
 }
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_ukyrk")
+anim_player = NodePath("../AnimationPlayer")
+"parameters/Idle /Idle_bs2D/blend_position" = Vector2(-0.424242, 0.40305)
+"parameters/Idle /TimeScale/scale" = 1.0
+parameters/Run/Run_bs2D/blend_position = Vector2(0, 0)
+parameters/Run/TimeScale/scale = 1.0
