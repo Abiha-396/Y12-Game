@@ -17,21 +17,36 @@ var blend_pos_paths = [
 ]
 
 var anim_tree_state_keys = [
-	"Idle",
-	"Run "
+	"idle",
+	"run"
 ]
-func _physics_process(_delta):
-	# Get input for 4 or 8 directions (WASD / Arrows)
-	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	
+func _physics_process(delta):
+	move(delta)
+	animate()
+
+func move(delta):
+	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	if direction == Vector2.ZERO:
 		state= IDLE
-	
-	
-	if direction != Vector2.ZERO:
-		velocity = direction * speed
+		apply_friction(friction*delta)
 	else:
-		# Smoothly stop when no keys are pressed
-		velocity = velocity.move_toward(Vector2.ZERO, speed)
-
+		state=RUN
+		apply_movement(direction*acceleration*delta)
+		
+		blend_position= direction
 	move_and_slide()
+	
+func apply_friction(amount) -> void:
+	if velocity.length()> amount:
+		velocity -= velocity.normalized() * amount
+	else:
+		velocity= Vector2.ZERO
+	
+func apply_movement(amount) -> void:
+	velocity +=amount
+	velocity= velocity.limit_length (speed)
+	
+
+func animate() -> void:
+	state_machine.travel(anim_tree_state_keys[state])
+	animation_tree.set(blend_pos_paths[state],blend_position)
