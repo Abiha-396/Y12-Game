@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-@export var speed = 300.0
-const acceleration =800
-const friction=500
+@export var speed = 200.0
+const acceleration =100
+const friction= 1000
 
 enum {IDLE, RUN}
 var state = IDLE
@@ -33,7 +33,7 @@ func move(delta):
 		apply_friction(friction*delta)
 	else:
 		state=RUN
-		apply_movement(direction*acceleration*delta)
+		apply_movement(direction*acceleration)
 	if direction.x < 0:
 		sprite.flip_h = true
 	elif direction.x > 0:
