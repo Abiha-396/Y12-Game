@@ -560,6 +560,7 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+active = false
 tree_root = SubResource("AnimationNodeStateMachine_ukyrk")
 anim_player = NodePath("../AnimationPlayer")
 "parameters/Idle /Idle_bs2D/blend_position" = Vector2(-0.0047847, 0.99093)

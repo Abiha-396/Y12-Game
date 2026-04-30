@@ -8,13 +8,15 @@ enum {IDLE, RUN}
 var state = IDLE
 
 @onready var animation_tree= $AnimationTree
+@onready var animator = $AnimationPlayer
+@onready var sprite = $AnimatedSprite2D
 @onready var state_machine= animation_tree["parameters/playback"]
 
-var blend_position : Vector2 = Vector2.ZERO
-var blend_pos_paths = [
-	"parameters/Idle /Idle_bs2D/blend_position",
-	"parameters/Run/Run_bs2D/blend_position"
-]
+#var blend_position : Vector2 = Vector2.ZERO
+#var blend_pos_paths = [
+	#"parameters/Idle/Idle_bs2D/blend_position",
+	#"parameters/Run/Run_bs2D/blend_position"
+#]
 
 var anim_tree_state_keys = [
 	"idle",
@@ -32,8 +34,13 @@ func move(delta):
 	else:
 		state=RUN
 		apply_movement(direction*acceleration*delta)
+	if direction.x < 0:
+		sprite.flip_h = true
+	elif direction.x > 0:
+		sprite.flip_h = false #no else, it will stay facing the last direction pressed
+		#the addon is called animated sprite to animation player convertor 4.0
 		
-		blend_position= direction
+		#blend_position= direction
 	move_and_slide()
 	
 func apply_friction(amount) -> void:
@@ -48,5 +55,10 @@ func apply_movement(amount) -> void:
 	
 
 func animate() -> void:
-	state_machine.travel(anim_tree_state_keys[state])
-	animation_tree.set(blend_pos_paths[state],blend_position)
+	match state:
+		IDLE:
+			animator.play("Idle_right")
+		RUN:
+			animator.play("Run_right")
+	#state_machine.travel(anim_tree_state_keys[state])
+	#animation_tree.set(blend_pos_paths[state],blend_position)
