@@ -567,3 +567,5 @@ anim_player = NodePath("../AnimationPlayer")
 "parameters/Idle /TimeScale/scale" = 1.0
 parameters/Run/Run_bs2D/blend_position = Vector2(0, 0)
 parameters/Run/TimeScale/scale = 1.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
