@@ -1,34 +1,84 @@
-[gd_scene format=3 uid="uid://cso64kjej10fb"]
+[gd_scene load_steps=11 format=3 uid="uid://cso64kjej10fb"]
+
+[ext_resource type="Texture2D" uid="uid://qp0ckqmxesea" path="res://Assets/UI Elements/UI Elements/Buttons/TinyRoundBlueButton.png" id="1_dc2ao"]
+[ext_resource type="Script" uid="uid://c5k22wwjq3pbr" path="res://buttons.gd" id="1_r3kxo"]
+[ext_resource type="Texture2D" uid="uid://buu8r6uxg2le3" path="res://Assets/UI Elements/UI Elements/Buttons/TinyRoundRedButton.png" id="2_m6m5g"]
+[ext_resource type="Texture2D" uid="uid://biwdrpbo0oq0s" path="res://Assets/UI Elements/UI Elements/Icons/Icon_09.png" id="3_2kh5i"]
+[ext_resource type="Texture2D" uid="uid://dtbmour4t6idj" path="res://Assets/UI Elements/UI Elements/Icons/Icon_12.png" id="4_5aik8"]
+[ext_resource type="Texture2D" uid="uid://cvhnj7furcmc8" path="res://Assets/UI Elements/UI Elements/Icons/Icon_08.png" id="5_2y0rg"]
+[ext_resource type="Texture2D" uid="uid://c01qsrodq6x66" path="res://Assets/UI Elements/UI Elements/Buttons/SmallBlueSquareButton_Regular.png" id="6_2hqns"]
+[ext_resource type="Texture2D" uid="uid://cp6cvtjbfj4t8" path="res://Assets/UI Elements/UI Elements/Buttons/SmallRedSquareButton_Regular.png" id="7_r3kxo"]
+[ext_resource type="Texture2D" uid="uid://bkwle856bmcc7" path="res://Assets/UI Elements/UI Elements/Bars/BigBar_Fill.png" id="7_y5w6w"]
+[ext_resource type="Texture2D" uid="uid://bhdjjhg7wuj8d" path="res://Assets/UI Elements/UI Elements/Icons/Icon_06.png" id="9_ljimj"]
 
 [node name="Buttons" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -7.0
+offset_right = -210.0
+offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_r3kxo")
 
 [node name="Top-right" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 952.0
+offset_top = 11.0
+offset_right = 1152.0
+offset_bottom = 80.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Top-right"]
 layout_mode = 2
+size_flags_stretch_ratio = 0.0
+alignment = 1
 
 [node name="Home" type="TextureButton" parent="Top-right/HBoxContainer"]
 layout_mode = 2
+texture_normal = ExtResource("1_dc2ao")
+texture_pressed = ExtResource("2_m6m5g")
+
+[node name="Icon08" type="Sprite2D" parent="Top-right/HBoxContainer/Home"]
+position = Vector2(31.5, 32.25)
+scale = Vector2(0.578125, 0.554688)
+texture = ExtResource("5_2y0rg")
 
 [node name="Restart" type="TextureButton" parent="Top-right/HBoxContainer"]
 layout_mode = 2
+texture_normal = ExtResource("1_dc2ao")
+texture_pressed = ExtResource("2_m6m5g")
+
+[node name="Icon09" type="Sprite2D" parent="Top-right/HBoxContainer/Restart"]
+z_index = 1
+position = Vector2(100.5, 31.25)
+scale = Vector2(0.765624, 0.695312)
+texture = ExtResource("3_2kh5i")
 
 [node name="Mute" type="TextureButton" parent="Top-right/HBoxContainer"]
 layout_mode = 2
+texture_normal = ExtResource("1_dc2ao")
+texture_pressed = ExtResource("2_m6m5g")
+
+[node name="Icon12" type="Sprite2D" parent="Top-right/HBoxContainer/Mute"]
+position = Vector2(-38, 33)
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("4_5aik8")
 
 [node name="Health bar" type="TextureProgressBar" parent="Top-right"]
 layout_mode = 2
+texture_progress = ExtResource("7_y5w6w")
 
 [node name="Relics book" type="TextureButton" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 5.0
+offset_top = -3.0
+offset_right = 133.0
+offset_bottom = 125.0
+texture_normal = ExtResource("6_2hqns")
+texture_pressed = ExtResource("7_r3kxo")
+
+[node name="Icon06" type="Sprite2D" parent="Relics book"]
+position = Vector2(64.5, 57.25)
+scale = Vector2(0.984375, 0.898437)
+texture = ExtResource("9_ljimj")
