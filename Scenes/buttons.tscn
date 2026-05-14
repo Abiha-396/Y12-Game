@@ -24,6 +24,7 @@ grow_vertical = 2
 script = ExtResource("1_r3kxo")
 
 [node name="Top-right" type="VBoxContainer" parent="."]
+layout_mode = 0
 offset_left = 952.0
 offset_top = 11.0
 offset_right = 1152.0

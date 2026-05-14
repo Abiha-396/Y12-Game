@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjfvjrfyo3upd"]
+
+[ext_resource type="Script" uid="uid://bwpcpx361rffp" path="res://Scripts/Spare.gd" id="1_kh65r"]
+[ext_resource type="Texture2D" uid="uid://bh4udra5dv3or" path="res://icon.svg" id="2_rupba"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bnx0d"]
+radius = 60.0333
+
+[node name="Rocks" type="Node2D"]
+script = ExtResource("1_kh65r")
+
+[node name="Rock" type="Sprite2D" parent="."]
+position = Vector2(149, 89)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_rupba")
+
+[node name="Area2D" type="Area2D" parent="Rock"]
+collision_mask = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rock/Area2D"]
+shape = SubResource("CircleShape2D_bnx0d")
+
+[connection signal="area_entered" from="Rock/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Rock/Area2D" to="." method="_on_area_2d_body_entered"]

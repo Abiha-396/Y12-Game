@@ -1,12 +1,14 @@
-# Get input for 4 or 8 directions (WASD / Arrows)
-	#var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+extends Node2D
+
+func _ready() -> void:
+	GlobalScript.life
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	GlobalScript.life-=1
+	print("Ouch")
 	
-	#if direction == Vector2.ZERO:
-		#state= IDLE
-	
-	
-	#if direction != Vector2.ZERO:
-		#velocity = direction * speed
-	#else:
-		# Smoothly stop when no keys are pressed
-		#velocity = velocity.move_toward(Vector2.ZERO, speed)
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	GlobalScript.life-=1
+	print("Ouch")
