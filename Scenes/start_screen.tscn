@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://2dgpr3h3gndd"]
 
-[ext_resource type="Script" uid="uid://lo8gl70f1wja" path="res://start_screen.gd" id="1_i8r30"]
+[ext_resource type="Script" uid="uid://lo8gl70f1wja" path="res://Scripts/start_screen.gd" id="1_i8r30"]
 
 [node name="Start screen" type="Control"]
 layout_mode = 3
@@ -10,6 +10,7 @@ offset_bottom = 40.0
 script = ExtResource("1_i8r30")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
 offset_right = 367.0
 offset_bottom = 230.0
 
