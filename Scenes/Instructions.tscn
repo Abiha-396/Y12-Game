@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://7hk6s5vhy7ng"]
+
+[ext_resource type="Script" uid="uid://cqosjurc2wjdi" path="res://Scripts/Instructions.gd" id="1_lf2ic"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oscdv"]
+
+[sub_resource type="Theme" id="Theme_vs51u"]
+Button/styles/normal = SubResource("StyleBoxTexture_oscdv")
+
+[node name="Instructions" type="CanvasLayer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = 192.0
+offset_top = 497.0
+offset_right = 857.0
+offset_bottom = 580.0
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Panel"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 8.0
+offset_right = 655.0
+offset_bottom = 72.0
+
+[node name="Text" type="Label" parent="MarginContainer/Panel/HBoxContainer"]
+layout_mode = 2
+script = ExtResource("1_lf2ic")
+
+[node name="Skip" type="Button" parent="."]
+offset_left = 761.0
+offset_top = 522.0
+offset_right = 844.0
+offset_bottom = 553.0
+theme = SubResource("Theme_vs51u")
+text = "Skip
+"
+
+[connection signal="pressed" from="Skip" to="MarginContainer/Panel/HBoxContainer/Text" method="_on_skip_pressed"]

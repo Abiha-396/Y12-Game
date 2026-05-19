@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bco4ppe2377xg"]
+
+[ext_resource type="Texture2D" uid="uid://djlktreptjecw" path="res://Assets/Buildings/Red Buildings/House2.png" id="1_fhp0g"]
+
+[node name="Village" type="Node2D"]
+
+[node name="House2" type="Sprite2D" parent="."]
+position = Vector2(528, 126)
+texture = ExtResource("1_fhp0g")
+
+[node name="House3" type="Sprite2D" parent="."]
+position = Vector2(641, 136)
+texture = ExtResource("1_fhp0g")

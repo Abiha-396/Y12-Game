@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://2dgpr3h3gndd"]
+[gd_scene load_steps=3 format=3 uid="uid://2dgpr3h3gndd"]
 
 [ext_resource type="Script" uid="uid://lo8gl70f1wja" path="res://Scripts/start_screen.gd" id="1_i8r30"]
+[ext_resource type="PackedScene" uid="uid://7hk6s5vhy7ng" path="res://Scenes/Instructions.tscn" id="2_ainjc"]
 
 [node name="Start screen" type="Control"]
 layout_mode = 3
@@ -44,26 +45,7 @@ text = "Menu
 layout_mode = 2
 text = "Quit"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
-offset_left = 192.0
-offset_top = 497.0
-offset_right = 857.0
-offset_bottom = 580.0
-
-[node name="Panel" type="Panel" parent="CanvasLayer/MarginContainer"]
-layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer/Panel"]
-layout_mode = 0
-offset_left = 5.0
-offset_top = 8.0
-offset_right = 655.0
-offset_bottom = 72.0
-
-[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/Panel/HBoxContainer"]
-layout_mode = 2
+[node name="CanvasLayer" parent="." instance=ExtResource("2_ainjc")]
 
 [connection signal="pressed" from="Buttons/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Buttons/Menu" to="." method="_on_menu_pressed"]
