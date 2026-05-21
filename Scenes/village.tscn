@@ -1,10 +1,16 @@
-[gd_scene load_steps=18 format=3 uid="uid://bco4ppe2377xg"]
+[gd_scene load_steps=30 format=4 uid="uid://bco4ppe2377xg"]
 
 [ext_resource type="Texture2D" uid="uid://djlktreptjecw" path="res://Assets/Buildings/Red Buildings/House2.png" id="1_fhp0g"]
 [ext_resource type="Texture2D" uid="uid://b5r7qu48gk5wm" path="res://Assets/Buildings/Red Buildings/Archery.png" id="2_78u5i"]
 [ext_resource type="Texture2D" uid="uid://c8r00lvdrxp73" path="res://Assets/Buildings/Red Buildings/House1.png" id="3_om0bm"]
 [ext_resource type="Texture2D" uid="uid://bvgfywuu306dx" path="res://Assets/Characters/Blue Units/Monk/Idle.png" id="5_78u5i"]
 [ext_resource type="Texture2D" uid="uid://dxl5sjc0e1squ" path="res://Assets/Buildings/Red Buildings/Monastery.png" id="5_yf0b0"]
+[ext_resource type="Script" uid="uid://6lq5txvfaie5" path="res://Scripts/monk.gd" id="6_om0bm"]
+[ext_resource type="Script" uid="uid://dnulh6tfhk5fm" path="res://Scripts/wood_cutting.gd" id="7_lwl7v"]
+[ext_resource type="Texture2D" uid="uid://dwd04hy6e5eys" path="res://Assets/Terrain/Resources/Wood/Trees/Tree2.png" id="8_d5xyy"]
+[ext_resource type="Texture2D" uid="uid://dgdc16omgsxwr" path="res://Assets/Terrain/Resources/Wood/Trees/Tree1.png" id="9_cibu2"]
+[ext_resource type="Texture2D" uid="uid://2eieanfwrg73" path="res://Assets/Terrain/Resources/Wood/Trees/Tree3.png" id="10_8uog6"]
+[ext_resource type="Texture2D" uid="uid://btc4ru6y52k2o" path="res://Assets/Terrain/Resources/Wood/Trees/Tree4.png" id="11_36r41"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_om0bm"]
 size = Vector2(61, 46)
@@ -59,13 +65,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8uog6"]
-radius = 28.0
-height = 62.0
-
 [sub_resource type="Animation" id="Animation_36r41"]
 resource_name = "Getting_out"
-length = 0.8
+length = 1.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -85,7 +87,7 @@ tracks/1/path = NodePath(".:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.2, 0.30144, 0.400442, 0.5024, 0.598446, 0.698926, 0.800884),
+"times": PackedFloat32Array(0.2, 0.4, 0.566667, 0.766667, 1, 1.26667, 1.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(0.212305, 0.212305, 0.212305, 1), Color(0.310617, 0.310617, 0.310617, 1), Color(0.466181, 0.466181, 0.466181, 1), Color(0.577008, 0.577008, 0.577008, 1), Color(0.65834, 0.65834, 0.65834, 1), Color(0.813258, 0.813258, 0.813257, 1), Color(0.991164, 0.991164, 0.991164, 1)]
@@ -97,7 +99,7 @@ tracks/2/path = NodePath(".:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.20096, 0.304395, 0.398964, 0.5024, 0.601402, 0.701882, 0.799406),
+"times": PackedFloat32Array(0, 0.20096, 0.4, 0.566667, 0.766667, 1, 1.26667, 1.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(-530, 121), Vector2(-530, 121), Vector2(-530, 134), Vector2(-510, 164), Vector2(-471, 185), Vector2(-471, 185), Vector2(-445, 190), Vector2(-432, 200)]
@@ -148,26 +150,62 @@ _data = {
 &"RESET": SubResource("Animation_kq6pr")
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8uog6"]
+radius = 28.0
+height = 62.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kq6pr"]
+size = Vector2(41, 401)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5f43a"]
+texture = ExtResource("8_d5xyy")
+texture_region_size = Vector2i(190, 250)
+0:0/animation_speed = 0.5
+0:0/animation_frame_0/duration = 0.1
+0:0/animation_frame_1/duration = 0.1
+0:0/animation_frame_2/duration = 0.1
+0:0/animation_frame_3/duration = 0.1
+0:0/animation_frame_4/duration = 0.1
+0:0/animation_frame_5/duration = 0.1
+0:0/animation_frame_6/duration = 0.1
+0:0/animation_frame_7/duration = 0.1
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0i4px"]
+texture = ExtResource("9_cibu2")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oveex"]
+texture = ExtResource("10_8uog6")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i2h3s"]
+texture = ExtResource("11_36r41")
+
+[sub_resource type="TileSet" id="TileSet_cyvso"]
+sources/0 = SubResource("TileSetAtlasSource_5f43a")
+sources/1 = SubResource("TileSetAtlasSource_0i4px")
+sources/2 = SubResource("TileSetAtlasSource_oveex")
+sources/3 = SubResource("TileSetAtlasSource_i2h3s")
+
 [node name="Village" type="Node2D"]
 
 [node name="Buildings" type="Node2D" parent="."]
 
-[node name="House2" type="Sprite2D" parent="Buildings"]
-position = Vector2(784, 228)
-texture = ExtResource("1_fhp0g")
-
 [node name="House5" type="Sprite2D" parent="Buildings"]
-position = Vector2(137, 162)
+position = Vector2(1757, -216)
 texture = ExtResource("1_fhp0g")
 flip_h = true
 
 [node name="House6" type="Sprite2D" parent="Buildings"]
-position = Vector2(73, 197)
+position = Vector2(1676, -190)
 texture = ExtResource("1_fhp0g")
 flip_h = true
 
 [node name="House3" type="Sprite2D" parent="Buildings"]
-position = Vector2(868, 252)
+position = Vector2(1625, 158)
+texture = ExtResource("1_fhp0g")
+
+[node name="House7" type="Sprite2D" parent="Buildings"]
+position = Vector2(1696, 212)
 texture = ExtResource("1_fhp0g")
 
 [node name="Archery" type="Sprite2D" parent="Buildings"]
@@ -175,11 +213,11 @@ position = Vector2(1265, 661)
 texture = ExtResource("2_78u5i")
 
 [node name="House1" type="Sprite2D" parent="Buildings"]
-position = Vector2(418, 110)
+position = Vector2(1177, -67)
 texture = ExtResource("3_om0bm")
 
 [node name="House4" type="Sprite2D" parent="Buildings"]
-position = Vector2(524, 107)
+position = Vector2(1286, -70)
 texture = ExtResource("3_om0bm")
 
 [node name="Monastery" type="Sprite2D" parent="Buildings"]
@@ -187,20 +225,76 @@ position = Vector2(-529, -10)
 texture = ExtResource("5_yf0b0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Buildings/Monastery"]
-position = Vector2(-1.5, 116)
+position = Vector2(2, 120)
 shape = SubResource("RectangleShape2D_om0bm")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Monk" type="AnimatedSprite2D" parent="."]
 visible = false
 position = Vector2(-530, 121)
 sprite_frames = SubResource("SpriteFrames_cibu2")
+frame_progress = 0.315866
+script = ExtResource("6_om0bm")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D"]
-position = Vector2(3, 0)
-shape = SubResource("CapsuleShape2D_8uog6")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Monk"]
 libraries = {
 &"": SubResource("AnimationLibrary_5f43a")
 }
-autoplay = "Getting_out"
+
+[node name="Camera2D" type="Camera2D" parent="Monk"]
+position = Vector2(530, -121)
+
+[node name="Area2D" type="Area2D" parent="Monk"]
+position = Vector2(3, 0)
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Monk/Area2D"]
+shape = SubResource("CapsuleShape2D_8uog6")
+
+[node name="Panel" type="Panel" parent="Monk"]
+visible = false
+offset_left = -92.0
+offset_top = 143.0
+offset_right = 199.0
+offset_bottom = 183.0
+
+[node name="Label" type="Label" parent="Monk/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Wood_cutting" type="Node2D" parent="."]
+position = Vector2(-622, 264)
+script = ExtResource("7_lwl7v")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-622, 264)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(621, 271)
+shape = SubResource("RectangleShape2D_kq6pr")
+
+[node name="TextureRect" type="TextureRect" parent="Area2D"]
+offset_left = 788.0
+offset_top = 120.0
+offset_right = 1124.0
+offset_bottom = 195.0
+
+[node name="Label" type="Label" parent="Area2D/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.253
+offset_left = 26.0
+offset_top = 29.0
+offset_right = 294.0
+offset_bottom = 58.025
+text = "Welcome to the land of wood."
+
+[node name="Trees" type="TileMapLayer" parent="Area2D"]
+tile_map_data = PackedByteArray("AABAAPz/AAAAAAAAAABHAPz/AAAAAAAAAABEAPn/AAAAAAAAAABLAPj/AAAAAAAAAABQAPv/AAAAAAAAAABVAPz/AAAAAAAAAABaAPz/AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_cyvso")
+
+[connection signal="area_entered" from="Monk/Area2D" to="Monk" method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Monk/Area2D" to="Monk" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D" to="Wood_cutting" method="_on_area_2d_body_entered"]
