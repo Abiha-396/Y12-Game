@@ -6,8 +6,8 @@
 [node name="Start screen" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1150.0
+offset_bottom = 652.0
 script = ExtResource("1_i8r30")
 
 [node name="TextureRect" type="TextureRect" parent="."]

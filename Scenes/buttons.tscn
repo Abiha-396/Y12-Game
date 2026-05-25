@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cso64kjej10fb"]
+[gd_scene load_steps=13 format=3 uid="uid://cso64kjej10fb"]
 
 [ext_resource type="Texture2D" uid="uid://qp0ckqmxesea" path="res://Assets/UI Elements/UI Elements/Buttons/TinyRoundBlueButton.png" id="1_dc2ao"]
 [ext_resource type="Script" uid="uid://c5k22wwjq3pbr" path="res://Scripts/buttons.gd" id="1_r3kxo"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cp6cvtjbfj4t8" path="res://Assets/UI Elements/UI Elements/Buttons/SmallRedSquareButton_Regular.png" id="7_r3kxo"]
 [ext_resource type="Texture2D" uid="uid://bkwle856bmcc7" path="res://Assets/UI Elements/UI Elements/Bars/BigBar_Fill.png" id="7_y5w6w"]
 [ext_resource type="Texture2D" uid="uid://bhdjjhg7wuj8d" path="res://Assets/UI Elements/UI Elements/Icons/Icon_06.png" id="9_ljimj"]
+[ext_resource type="Texture2D" uid="uid://bxeq4yhk2cqpg" path="res://Assets/UI Elements/UI Banners from the store page/Banner/Banner.png" id="12_ljimj"]
 
 [node name="Buttons" type="Control"]
 layout_mode = 3
@@ -73,19 +74,38 @@ texture_under = ExtResource("7_ljimj")
 texture_over = ExtResource("7_y5w6w")
 texture_progress = ExtResource("7_y5w6w")
 
-[node name="Relics book" type="TextureButton" parent="."]
+[node name="Relics book" type="TextureButton" parent="Top-right/Health bar"]
 layout_mode = 0
-offset_left = 5.0
-offset_top = -3.0
-offset_right = 133.0
-offset_bottom = 125.0
+offset_left = -947.0
+offset_top = -82.0
+offset_right = -819.0
+offset_bottom = 46.0
 texture_normal = ExtResource("6_2hqns")
 texture_pressed = ExtResource("7_r3kxo")
 
-[node name="Icon06" type="Sprite2D" parent="Relics book"]
+[node name="Icon06" type="Sprite2D" parent="Top-right/Health bar/Relics book"]
 position = Vector2(64.5, 57.25)
 scale = Vector2(0.984375, 0.898437)
 texture = ExtResource("9_ljimj")
 
+[node name="TextureRect" type="TextureRect" parent="Top-right/Health bar/Relics book"]
+z_index = 6
+layout_mode = 0
+offset_left = 21.0
+offset_top = 114.0
+offset_right = 725.0
+offset_bottom = 626.0
+texture = ExtResource("12_ljimj")
+
+[node name="Close" type="Button" parent="Top-right/Health bar/Relics book/TextureRect"]
+layout_mode = 0
+offset_left = 489.0
+offset_top = 418.0
+offset_right = 555.0
+offset_bottom = 438.0
+text = "Close"
+
 [connection signal="pressed" from="Top-right/HBoxContainer/Home" to="." method="_on_home_pressed"]
 [connection signal="pressed" from="Top-right/HBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Top-right/Health bar/Relics book" to="." method="_on_relics_book_pressed"]
+[connection signal="pressed" from="Top-right/Health bar/Relics book/TextureRect/Close" to="." method="_on_close_pressed"]

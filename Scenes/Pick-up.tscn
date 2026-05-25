@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bf017do7gcmnm"]
+
+[ext_resource type="Texture2D" uid="uid://bra2w1h83pemy" path="res://Assets/Terrain/Resources/Tools/Tool_02.png" id="1_3j0mo"]
+[ext_resource type="Script" uid="uid://bt4gemrrtfiuv" path="res://Scripts/pick_up.gd" id="2_jleex"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jywkh"]
+radius = 13.5155
+height = 27.031
+
+[node name="Tool" type="Sprite2D"]
+scale = Vector2(1.50464, 1.62217)
+texture = ExtResource("1_3j0mo")
+script = ExtResource("2_jleex")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 35
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_jywkh")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

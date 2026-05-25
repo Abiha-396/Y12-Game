@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://bco4ppe2377xg"]
+[gd_scene load_steps=34 format=3 uid="uid://bco4ppe2377xg"]
 
 [ext_resource type="Texture2D" uid="uid://djlktreptjecw" path="res://Assets/Buildings/Red Buildings/House2.png" id="1_fhp0g"]
 [ext_resource type="Texture2D" uid="uid://b5r7qu48gk5wm" path="res://Assets/Buildings/Red Buildings/Archery.png" id="2_78u5i"]
@@ -8,9 +8,8 @@
 [ext_resource type="Script" uid="uid://6lq5txvfaie5" path="res://Scripts/monk.gd" id="6_om0bm"]
 [ext_resource type="Script" uid="uid://dnulh6tfhk5fm" path="res://Scripts/wood_cutting.gd" id="7_lwl7v"]
 [ext_resource type="Texture2D" uid="uid://dwd04hy6e5eys" path="res://Assets/Terrain/Resources/Wood/Trees/Tree2.png" id="8_d5xyy"]
-[ext_resource type="Texture2D" uid="uid://dgdc16omgsxwr" path="res://Assets/Terrain/Resources/Wood/Trees/Tree1.png" id="9_cibu2"]
-[ext_resource type="Texture2D" uid="uid://2eieanfwrg73" path="res://Assets/Terrain/Resources/Wood/Trees/Tree3.png" id="10_8uog6"]
-[ext_resource type="Texture2D" uid="uid://btc4ru6y52k2o" path="res://Assets/Terrain/Resources/Wood/Trees/Tree4.png" id="11_36r41"]
+[ext_resource type="Script" uid="uid://ctqjsvqkm3m66" path="res://Scripts/trees.gd" id="8_lwl7v"]
+[ext_resource type="PackedScene" uid="uid://bf017do7gcmnm" path="res://Scenes/Pick-up.tscn" id="10_7en6d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_om0bm"]
 size = Vector2(61, 46)
@@ -157,34 +156,72 @@ height = 62.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kq6pr"]
 size = Vector2(41, 401)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5f43a"]
-texture = ExtResource("8_d5xyy")
-texture_region_size = Vector2i(190, 250)
-0:0/animation_speed = 0.5
-0:0/animation_frame_0/duration = 0.1
-0:0/animation_frame_1/duration = 0.1
-0:0/animation_frame_2/duration = 0.1
-0:0/animation_frame_3/duration = 0.1
-0:0/animation_frame_4/duration = 0.1
-0:0/animation_frame_5/duration = 0.1
-0:0/animation_frame_6/duration = 0.1
-0:0/animation_frame_7/duration = 0.1
-0:0/0 = 0
+[sub_resource type="AtlasTexture" id="AtlasTexture_8uog6"]
+atlas = ExtResource("8_d5xyy")
+region = Rect2(0, 0, 192, 256)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0i4px"]
-texture = ExtResource("9_cibu2")
+[sub_resource type="AtlasTexture" id="AtlasTexture_36r41"]
+atlas = ExtResource("8_d5xyy")
+region = Rect2(192, 0, 192, 256)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oveex"]
-texture = ExtResource("10_8uog6")
+[sub_resource type="AtlasTexture" id="AtlasTexture_kq6pr"]
+atlas = ExtResource("8_d5xyy")
+region = Rect2(384, 0, 192, 256)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i2h3s"]
-texture = ExtResource("11_36r41")
+[sub_resource type="AtlasTexture" id="AtlasTexture_5f43a"]
+atlas = ExtResource("8_d5xyy")
+region = Rect2(576, 0, 192, 256)
 
-[sub_resource type="TileSet" id="TileSet_cyvso"]
-sources/0 = SubResource("TileSetAtlasSource_5f43a")
-sources/1 = SubResource("TileSetAtlasSource_0i4px")
-sources/2 = SubResource("TileSetAtlasSource_oveex")
-sources/3 = SubResource("TileSetAtlasSource_i2h3s")
+[sub_resource type="AtlasTexture" id="AtlasTexture_0i4px"]
+atlas = ExtResource("8_d5xyy")
+region = Rect2(768, 0, 192, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oveex"]
+atlas = ExtResource("8_d5xyy")
+region = Rect2(960, 0, 192, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2h3s"]
+atlas = ExtResource("8_d5xyy")
+region = Rect2(1152, 0, 192, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cyvso"]
+atlas = ExtResource("8_d5xyy")
+region = Rect2(1344, 0, 192, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nwfgd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8uog6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36r41")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kq6pr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5f43a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0i4px")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oveex")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2h3s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cyvso")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vfnj5"]
+radius = 27.3263
 
 [node name="Village" type="Node2D"]
 
@@ -267,21 +304,20 @@ offset_bottom = 23.0
 position = Vector2(-622, 264)
 script = ExtResource("7_lwl7v")
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(-622, 264)
+[node name="Area2D" type="Area2D" parent="Wood_cutting"]
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wood_cutting/Area2D"]
 position = Vector2(621, 271)
 shape = SubResource("RectangleShape2D_kq6pr")
 
-[node name="TextureRect" type="TextureRect" parent="Area2D"]
-offset_left = 788.0
-offset_top = 120.0
-offset_right = 1124.0
-offset_bottom = 195.0
+[node name="TextureRect" type="TextureRect" parent="Wood_cutting/Area2D"]
+offset_left = 588.0
+offset_top = -13.0
+offset_right = 924.0
+offset_bottom = 62.0
 
-[node name="Label" type="Label" parent="Area2D/TextureRect"]
+[node name="Label" type="Label" parent="Wood_cutting/Area2D/TextureRect"]
 layout_mode = 1
 anchors_preset = -1
 anchor_bottom = 0.253
@@ -291,10 +327,61 @@ offset_right = 294.0
 offset_bottom = 58.025
 text = "Welcome to the land of wood."
 
-[node name="Trees" type="TileMapLayer" parent="Area2D"]
-tile_map_data = PackedByteArray("AABAAPz/AAAAAAAAAABHAPz/AAAAAAAAAABEAPn/AAAAAAAAAABLAPj/AAAAAAAAAABQAPv/AAAAAAAAAABVAPz/AAAAAAAAAABaAPz/AAAAAAAAAAA=")
-tile_set = SubResource("TileSet_cyvso")
+[node name="Trees" type="Node2D" parent="Wood_cutting"]
+position = Vector2(1086, -20)
+scale = Vector2(0.841146, 0.775391)
+script = ExtResource("8_lwl7v")
+
+[node name="Tree" type="AnimatedSprite2D" parent="Wood_cutting/Trees"]
+position = Vector2(-101.053, 19.3451)
+sprite_frames = SubResource("SpriteFrames_nwfgd")
+autoplay = "default"
+frame_progress = 0.592945
+
+[node name="Area2D2" type="Area2D" parent="Wood_cutting/Trees/Tree"]
+position = Vector2(622, -264)
+collision_layer = 32
+collision_mask = 18
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wood_cutting/Trees/Tree/Area2D2"]
+position = Vector2(-621.108, 341.058)
+shape = SubResource("CircleShape2D_vfnj5")
+
+[node name="Tree3" type="AnimatedSprite2D" parent="Wood_cutting/Trees"]
+position = Vector2(96.2972, 32.2418)
+sprite_frames = SubResource("SpriteFrames_nwfgd")
+autoplay = "default"
+frame_progress = 0.976707
+
+[node name="Area2D2" type="Area2D" parent="Wood_cutting/Trees/Tree3"]
+position = Vector2(622, -264)
+collision_layer = 32
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wood_cutting/Trees/Tree3/Area2D2"]
+position = Vector2(-621.108, 341.058)
+shape = SubResource("CircleShape2D_vfnj5")
+
+[node name="Tree2" type="AnimatedSprite2D" parent="Wood_cutting/Trees"]
+sprite_frames = SubResource("SpriteFrames_nwfgd")
+autoplay = "default"
+frame_progress = 0.817782
+
+[node name="Area2D2" type="Area2D" parent="Wood_cutting/Trees/Tree2"]
+position = Vector2(622, -264)
+collision_layer = 32
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wood_cutting/Trees/Tree2/Area2D2"]
+position = Vector2(-621.108, 341.058)
+shape = SubResource("CircleShape2D_vfnj5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Wood_cutting/Trees"]
+
+[node name="Tool02" parent="Wood_cutting/Trees" instance=ExtResource("10_7en6d")]
+position = Vector2(-337.635, 413.985)
+scale = Vector2(1.50464, 1.62217)
 
 [connection signal="area_entered" from="Monk/Area2D" to="Monk" method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Monk/Area2D" to="Monk" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Area2D" to="Wood_cutting" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Wood_cutting/Area2D" to="Wood_cutting" method="_on_area_2d_body_entered"]
