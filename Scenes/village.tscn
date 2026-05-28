@@ -321,10 +321,10 @@ offset_bottom = 62.0
 layout_mode = 1
 anchors_preset = -1
 anchor_bottom = 0.253
-offset_left = 26.0
-offset_top = 29.0
-offset_right = 294.0
-offset_bottom = 58.025
+offset_left = 71.0
+offset_top = 168.0
+offset_right = 339.0
+offset_bottom = 197.025
 text = "Welcome to the land of wood."
 
 [node name="Trees" type="Node2D" parent="Wood_cutting"]
@@ -380,7 +380,6 @@ shape = SubResource("CircleShape2D_vfnj5")
 
 [node name="Tool02" parent="Wood_cutting/Trees" instance=ExtResource("10_7en6d")]
 position = Vector2(-337.635, 413.985)
-scale = Vector2(1.50464, 1.62217)
 
 [connection signal="area_entered" from="Monk/Area2D" to="Monk" method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Monk/Area2D" to="Monk" method="_on_area_2d_body_entered"]
