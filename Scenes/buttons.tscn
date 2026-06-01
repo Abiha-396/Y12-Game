@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cso64kjej10fb"]
+[gd_scene load_steps=17 format=4 uid="uid://cso64kjej10fb"]
 
 [ext_resource type="Texture2D" uid="uid://qp0ckqmxesea" path="res://Assets/UI Elements/UI Elements/Buttons/TinyRoundBlueButton.png" id="1_dc2ao"]
 [ext_resource type="Script" uid="uid://c5k22wwjq3pbr" path="res://Scripts/buttons.gd" id="1_r3kxo"]
@@ -7,30 +7,454 @@
 [ext_resource type="Texture2D" uid="uid://dtbmour4t6idj" path="res://Assets/UI Elements/UI Elements/Icons/Icon_12.png" id="4_5aik8"]
 [ext_resource type="Texture2D" uid="uid://cvhnj7furcmc8" path="res://Assets/UI Elements/UI Elements/Icons/Icon_08.png" id="5_2y0rg"]
 [ext_resource type="Texture2D" uid="uid://c01qsrodq6x66" path="res://Assets/UI Elements/UI Elements/Buttons/SmallBlueSquareButton_Regular.png" id="6_2hqns"]
-[ext_resource type="Texture2D" uid="uid://cqrpsmy7b6u4b" path="res://Assets/UI Elements/UI Elements/Bars/BigBar_Base.png" id="7_ljimj"]
 [ext_resource type="Texture2D" uid="uid://cp6cvtjbfj4t8" path="res://Assets/UI Elements/UI Elements/Buttons/SmallRedSquareButton_Regular.png" id="7_r3kxo"]
-[ext_resource type="Texture2D" uid="uid://bkwle856bmcc7" path="res://Assets/UI Elements/UI Elements/Bars/BigBar_Fill.png" id="7_y5w6w"]
 [ext_resource type="Texture2D" uid="uid://bhdjjhg7wuj8d" path="res://Assets/UI Elements/UI Elements/Icons/Icon_06.png" id="9_ljimj"]
-[ext_resource type="Texture2D" uid="uid://bxeq4yhk2cqpg" path="res://Assets/UI Elements/UI Banners from the store page/Banner/Banner.png" id="12_ljimj"]
+[ext_resource type="Texture2D" uid="uid://j2a24btuvr0m" path="res://Assets/UI Elements/UI Elements/Banners/Banner_Slots.png" id="10_y5w6w"]
+[ext_resource type="Texture2D" uid="uid://58lb62305kg1" path="res://Assets/UI Elements/UI Elements/Banners/Banner.png" id="11_ljimj"]
+[ext_resource type="PackedScene" uid="uid://lb3uj6kc8lq3" path="res://Scenes/menu_resources.tscn" id="12_b2qy2"]
+[ext_resource type="Texture2D" uid="uid://c03ybd4t7wo0e" path="res://Assets/UI Elements/UI Elements/Icons/Icon_02.png" id="13_gf7if"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b2qy2"]
+texture = ExtResource("10_y5w6w")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+10:11/0 = 0
+11:11/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gf7if"]
+texture = ExtResource("11_ljimj")
+texture_region_size = Vector2i(135, 146)
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+20:3/0 = 0
+21:3/0 = 0
+22:3/0 = 0
+23:3/0 = 0
+24:3/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+20:4/0 = 0
+21:4/0 = 0
+22:4/0 = 0
+23:4/0 = 0
+24:4/0 = 0
+25:4/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+20:5/0 = 0
+21:5/0 = 0
+22:5/0 = 0
+23:5/0 = 0
+24:5/0 = 0
+25:5/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+20:6/0 = 0
+21:6/0 = 0
+22:6/0 = 0
+23:6/0 = 0
+24:6/0 = 0
+25:6/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+14:7/0 = 0
+15:7/0 = 0
+20:7/0 = 0
+21:7/0 = 0
+22:7/0 = 0
+23:7/0 = 0
+24:7/0 = 0
+25:7/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+5:12/0 = 0
+6:12/0 = 0
+7:12/0 = 0
+12:12/0 = 0
+13:12/0 = 0
+14:12/0 = 0
+15:12/0 = 0
+20:12/0 = 0
+21:12/0 = 0
+22:12/0 = 0
+23:12/0 = 0
+24:12/0 = 0
+25:12/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+6:13/0 = 0
+7:13/0 = 0
+12:13/0 = 0
+13:13/0 = 0
+14:13/0 = 0
+15:13/0 = 0
+20:13/0 = 0
+21:13/0 = 0
+22:13/0 = 0
+23:13/0 = 0
+24:13/0 = 0
+25:13/0 = 0
+1:14/0 = 0
+2:14/0 = 0
+3:14/0 = 0
+4:14/0 = 0
+5:14/0 = 0
+6:14/0 = 0
+7:14/0 = 0
+12:14/0 = 0
+13:14/0 = 0
+14:14/0 = 0
+15:14/0 = 0
+20:14/0 = 0
+21:14/0 = 0
+22:14/0 = 0
+23:14/0 = 0
+24:14/0 = 0
+25:14/0 = 0
+1:15/0 = 0
+2:15/0 = 0
+3:15/0 = 0
+4:15/0 = 0
+5:15/0 = 0
+6:15/0 = 0
+7:15/0 = 0
+12:15/0 = 0
+13:15/0 = 0
+14:15/0 = 0
+15:15/0 = 0
+20:15/0 = 0
+21:15/0 = 0
+22:15/0 = 0
+23:15/0 = 0
+24:15/0 = 0
+25:15/0 = 0
+1:20/0 = 0
+2:20/0 = 0
+3:20/0 = 0
+4:20/0 = 0
+5:20/0 = 0
+6:20/0 = 0
+7:20/0 = 0
+12:20/0 = 0
+13:20/0 = 0
+14:20/0 = 0
+15:20/0 = 0
+20:20/0 = 0
+21:20/0 = 0
+22:20/0 = 0
+23:20/0 = 0
+24:20/0 = 0
+25:20/0 = 0
+1:21/0 = 0
+2:21/0 = 0
+3:21/0 = 0
+4:21/0 = 0
+5:21/0 = 0
+6:21/0 = 0
+7:21/0 = 0
+12:21/0 = 0
+13:21/0 = 0
+14:21/0 = 0
+15:21/0 = 0
+20:21/0 = 0
+21:21/0 = 0
+22:21/0 = 0
+23:21/0 = 0
+24:21/0 = 0
+25:21/0 = 0
+1:22/0 = 0
+2:22/0 = 0
+3:22/0 = 0
+4:22/0 = 0
+5:22/0 = 0
+6:22/0 = 0
+7:22/0 = 0
+12:22/0 = 0
+13:22/0 = 0
+14:22/0 = 0
+15:22/0 = 0
+20:22/0 = 0
+21:22/0 = 0
+22:22/0 = 0
+23:22/0 = 0
+24:22/0 = 0
+25:22/0 = 0
+1:23/0 = 0
+2:23/0 = 0
+3:23/0 = 0
+4:23/0 = 0
+5:23/0 = 0
+6:23/0 = 0
+7:23/0 = 0
+12:23/0 = 0
+13:23/0 = 0
+14:23/0 = 0
+15:23/0 = 0
+20:23/0 = 0
+21:23/0 = 0
+22:23/0 = 0
+23:23/0 = 0
+24:23/0 = 0
+25:23/0 = 0
+1:24/0 = 0
+2:24/0 = 0
+3:24/0 = 0
+4:24/0 = 0
+5:24/0 = 0
+6:24/0 = 0
+7:24/0 = 0
+12:24/0 = 0
+13:24/0 = 0
+14:24/0 = 0
+15:24/0 = 0
+20:24/0 = 0
+21:24/0 = 0
+22:24/0 = 0
+23:24/0 = 0
+24:24/0 = 0
+25:24/0 = 0
+1:25/0 = 0
+2:25/0 = 0
+3:25/0 = 0
+4:25/0 = 0
+5:25/0 = 0
+6:25/0 = 0
+7:25/0 = 0
+20:25/0 = 0
+21:25/0 = 0
+22:25/0 = 0
+23:25/0 = 0
+24:25/0 = 0
+25:25/0 = 0
+1:26/0 = 0
+2:26/0 = 0
+3:26/0 = 0
+4:26/0 = 0
+5:26/0 = 0
+6:26/0 = 0
+7:26/0 = 0
+20:26/0 = 0
+21:26/0 = 0
+22:26/0 = 0
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+2:1/0 = 0
+2:2/0 = 0
+1:1/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_eu1xn"]
+sources/0 = SubResource("TileSetAtlasSource_b2qy2")
+sources/1 = SubResource("TileSetAtlasSource_gf7if")
 
 [node name="Buttons" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -7.0
-offset_right = -210.0
-offset_bottom = 5.0
+offset_left = 60.0
+offset_top = 49.0
+offset_right = -143.0
+offset_bottom = 54.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_r3kxo")
 
 [node name="Top-right" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 952.0
-offset_top = 11.0
-offset_right = 1152.0
-offset_bottom = 80.0
+offset_left = 884.0
+offset_top = -41.0
+offset_right = 1084.0
+offset_bottom = 54.0
+alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Top-right"]
 layout_mode = 2
@@ -68,13 +492,10 @@ position = Vector2(-38, 33)
 scale = Vector2(0.625, 0.625)
 texture = ExtResource("4_5aik8")
 
-[node name="Health bar" type="TextureProgressBar" parent="Top-right"]
+[node name="ProgressBar" type="ProgressBar" parent="Top-right"]
 layout_mode = 2
-texture_under = ExtResource("7_ljimj")
-texture_over = ExtResource("7_y5w6w")
-texture_progress = ExtResource("7_y5w6w")
 
-[node name="Relics book" type="TextureButton" parent="Top-right/Health bar"]
+[node name="Relics book" type="TextureButton" parent="Top-right/ProgressBar"]
 layout_mode = 0
 offset_left = -947.0
 offset_top = -82.0
@@ -83,29 +504,36 @@ offset_bottom = 46.0
 texture_normal = ExtResource("6_2hqns")
 texture_pressed = ExtResource("7_r3kxo")
 
-[node name="Icon06" type="Sprite2D" parent="Top-right/Health bar/Relics book"]
+[node name="Icon06" type="Sprite2D" parent="Top-right/ProgressBar/Relics book"]
 position = Vector2(64.5, 57.25)
 scale = Vector2(0.984375, 0.898437)
 texture = ExtResource("9_ljimj")
 
-[node name="TextureRect" type="TextureRect" parent="Top-right/Health bar/Relics book"]
-z_index = 6
-layout_mode = 0
-offset_left = 21.0
-offset_top = 114.0
-offset_right = 725.0
-offset_bottom = 626.0
-texture = ExtResource("12_ljimj")
+[node name="TileMapLayer" type="TileMapLayer" parent="Top-right/ProgressBar/Relics book"]
+position = Vector2(55, -81)
+tile_map_data = PackedByteArray("AAAAAA4AAQAAAAAAAAAFAA4AAQABAAAAAAAEAA4AAQABAAAAAAAJAA4AAQABAAAAAAANAA4AAQABAAAAAAAQAA4AAQABAAAAAAATAA4AAQACAAAAAAAAABMAAQAAAAEAAAAAABcAAQAAAAEAAAAAABsAAQAAAAEAAAAAAB8AAQAAAAIAAAAEAB8AAQABAAIAAAAFAB8AAQABAAIAAAAGAB8AAQABAAIAAAAHAB8AAQABAAIAAAAIAB8AAQABAAIAAAAJAB8AAQABAAIAAAAKAB8AAQABAAIAAAALAB8AAQABAAIAAAAMAB8AAQABAAIAAAANAB8AAQABAAIAAAAOAB8AAQABAAIAAAAPAB8AAQABAAIAAAAQAB8AAQABAAIAAAAUAB8AAQACAAIAAAAUAA4AAQACAAAAAAATABIAAQABAAEAAAAUABIAAQACAAEAAAATABMAAQABAAEAAAAUABMAAQACAAEAAAATABQAAQABAAEAAAAUABQAAQACAAEAAAATABUAAQABAAEAAAAUABUAAQACAAEAAAARABYAAQABAAEAAAASABYAAQACAAEAAAARABcAAQABAAEAAAASABcAAQACAAEAAAARABgAAQABAAEAAAASABgAAQACAAEAAAATABkAAQABAAEAAAAUABkAAQACAAEAAAARABkAAQABAAEAAAASABkAAQACAAEAAAARABoAAQABAAEAAAASABoAAQACAAEAAAARABsAAQABAAEAAAASABsAAQACAAEAAAATABsAAQABAAEAAAAUABsAAQACAAEAAAAEABMAAQABAAEAAAAFABMAAQABAAEAAAAGABMAAQABAAEAAAAHABQAAQABAAEAAAAIABQAAQABAAEAAAAJABQAAQABAAEAAAAKABQAAQABAAEAAAALABQAAQABAAEAAAAMABQAAQABAAEAAAANABQAAQABAAEAAAAOABQAAQABAAEAAAAPABQAAQABAAEAAAALABMAAQABAAEAAAAKABMAAQABAAEAAAAJABMAAQABAAEAAAAJABIAAQABAAEAAAAKABIAAQABAAEAAAALABIAAQABAAEAAAAMABMAAQABAAEAAAANABMAAQABAAEAAAAOABMAAQABAAEAAAAPABMAAQABAAEAAAAQABMAAQABAAEAAAARABMAAQABAAEAAAAQABQAAQABAAEAAAAPABUAAQABAAEAAAAOABUAAQABAAEAAAAOABYAAQABAAEAAAANABcAAQABAAEAAAANABgAAQABAAEAAAAMABgAAQABAAEAAAALABgAAQABAAEAAAAKABgAAQABAAEAAAAJABgAAQABAAEAAAAJABcAAQABAAEAAAAIABcAAQABAAEAAAAJABYAAQABAAEAAAAKABYAAQABAAEAAAALABUAAQABAAEAAAAMABUAAQABAAEAAAAKABUAAQABAAEAAAAJABUAAQABAAEAAAAIABUAAQABAAEAAAAHABUAAQABAAEAAAAGABUAAQABAAEAAAAFABUAAQABAAEAAAAEABUAAQABAAEAAAADABUAAQABAAEAAAACABUAAQABAAEAAAACABYAAQABAAEAAAADABYAAQABAAEAAAADABcAAQABAAEAAAAEABcAAQABAAEAAAAFABcAAQABAAEAAAAGABgAAQABAAEAAAAHABgAAQABAAEAAAAHABkAAQABAAEAAAAHABoAAQABAAEAAAAGABoAAQABAAEAAAAFABoAAQABAAEAAAAIABoAAQABAAEAAAAJABkAAQABAAEAAAAKABkAAQABAAEAAAAIABkAAQABAAEAAAAEABoAAQABAAEAAAADABoAAQABAAEAAAACABoAAQABAAEAAAAJABoAAQABAAEAAAAKABoAAQABAAEAAAALABoAAQABAAEAAAAMABoAAQABAAEAAAANABoAAQABAAEAAAAOABoAAQABAAEAAAAPABoAAQABAAEAAAAPABsAAQABAAEAAAA=")
+tile_set = SubResource("TileSet_eu1xn")
 
-[node name="Close" type="Button" parent="Top-right/Health bar/Relics book/TextureRect"]
-layout_mode = 0
-offset_left = 489.0
-offset_top = 418.0
-offset_right = 555.0
-offset_bottom = 438.0
+[node name="Close" type="Button" parent="Top-right/ProgressBar/Relics book/TileMapLayer"]
+offset_left = 305.0
+offset_top = 474.0
+offset_right = 371.0
+offset_bottom = 505.0
 text = "Close"
+
+[node name="Menu_resources" parent="Top-right/ProgressBar/Relics book/TileMapLayer" instance=ExtResource("12_b2qy2")]
+offset_left = -55.0
+offset_top = 81.0
+offset_right = -55.0
+offset_bottom = 81.0
+
+[node name="Sprite2D" parent="Top-right/ProgressBar/Relics book/TileMapLayer/Menu_resources" index="0"]
+position = Vector2(90, 177)
+texture = ExtResource("13_gf7if")
 
 [connection signal="pressed" from="Top-right/HBoxContainer/Home" to="." method="_on_home_pressed"]
 [connection signal="pressed" from="Top-right/HBoxContainer/Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="Top-right/Health bar/Relics book" to="." method="_on_relics_book_pressed"]
-[connection signal="pressed" from="Top-right/Health bar/Relics book/TextureRect/Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="Top-right/ProgressBar/Relics book" to="." method="_on_relics_book_pressed"]
+[connection signal="pressed" from="Top-right/ProgressBar/Relics book/TileMapLayer/Close" to="." method="_on_close_pressed"]
+
+[editable path="Top-right/ProgressBar/Relics book/TileMapLayer/Menu_resources"]

@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4ejionbxucit"]
+
+[ext_resource type="PackedScene" uid="uid://cso64kjej10fb" path="res://Scenes/buttons.tscn" id="1_xl3lb"]
+
+[node name="Backgound" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 5.0
+offset_right = 3.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Image" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Image"]
+z_index = -5
+offset_right = 1153.0
+offset_bottom = 644.0
+
+[node name="Buttons" type="CanvasLayer" parent="."]
+
+[node name="Buttons" parent="Buttons" instance=ExtResource("1_xl3lb")]
+offset_right = -31.0
+offset_bottom = -11.0

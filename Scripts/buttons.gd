@@ -1,9 +1,16 @@
 extends Control
-@onready var relics_menu=$"Top-right/Health bar/Relics book/TextureRect"
+@onready var relics_menu=$"Top-right/ProgressBar/Relics book/TileMapLayer"
+@onready var progress_bar=$"Top-right/ProgressBar"
 
-	
+
+
 func _ready() -> void:
 	relics_menu.hide()
+	GlobalScript.life
+	
+	
+func _process(delta: float) -> void:
+	progress_bar.value=(GlobalScript.life*100)/5
 
 func _on_home_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/start_screen.tscn")
