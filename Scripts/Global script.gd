@@ -1,6 +1,6 @@
 extends Node
 
-var life: int = 3
+var life: int = 5
 var tree= false
 
 func _process(delta: float) -> void:
