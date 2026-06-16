@@ -347,6 +347,7 @@ shape = SubResource("CapsuleShape2D_7en6d")
 position = Vector2(-337.635, 413.985)
 
 [node name="Monastery" type="Sprite2D" parent="."]
+z_index = 11
 position = Vector2(-529, -10)
 texture = ExtResource("5_yf0b0")
 
