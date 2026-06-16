@@ -4,7 +4,7 @@ extends CharacterBody2D
 const speed = 40 # Adjust this to match your animation pace
 var runaway_direction: Vector2 = Vector2.ZERO
 var is_running: bool = false
-const safe_distance = 100
+const safe_distance = 200
 
 # Leave this empty at first. We will grab the real player node when they walk into the area.
 var player_ref: Node2D = null 
@@ -13,6 +13,7 @@ func _physics_process(delta):
 	if is_running:
 		# 1. Move the sheep
 		velocity = runaway_direction * speed
+		animation_player.play("running")
 		move_and_slide() # For Godot 4
 		
 		# 2. Flip the sprite to look where it is running
@@ -37,7 +38,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Player" or body.is_in_group("player"):
 		player_ref = body # Save the player node so _physics_process can track it
 		is_running = true
-		animation_player.play("running")
+		
 		
 		# Calculate the direction away from the player
 		var player_pos = body.global_position
