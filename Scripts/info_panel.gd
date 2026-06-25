@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @onready var event_text = $Panel/Label
+@onready var Title=$Panel/Top_label
 @onready var event_panel=$Panel
 @onready var colour_rect=$ColorRect
 @export var message: String = ""
@@ -11,10 +12,11 @@ func _ready():
 	event_text.visible=false
 	event_panel.visible=false
 	print("ready")
+	colour_rect.modulate= Color("ffffff00")
 
 
 func show_event_text(message: String):
-	colour_rect.modulate
+	colour_rect.modulate= Color("0b0c0c6f")
 	get_tree().paused = true
 	event_text.text = message
 	event_text.visible = true
@@ -23,7 +25,14 @@ func show_event_text(message: String):
 	event_text.visible = false
 	event_panel.visible=false
 	get_tree().paused = false
+	colour_rect.modulate= Color("ffffff00")
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	show_event_text(message)
+
+
+
+func _on_sign_post_message_sent(message,title) -> void:
+	Title.text=title
+	event_text.text=message
