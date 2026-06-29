@@ -4928,7 +4928,8 @@ tile_set = SubResource("TileSet_st0hs")
 
 [node name="Info_panel" type="CanvasLayer" parent="."]
 script = ExtResource("14_lkdmu")
-message = "Hello World"
+message = "Hi"
+top_message = "TEST"
 
 [node name="Panel" type="TileMapLayer" parent="Info_panel"]
 z_index = 10
@@ -4936,14 +4937,18 @@ tile_map_data = PackedByteArray("AAACABwABQAAAAIAAAACAB0ABQAAAAMAAAACAB4ABQAAAAg
 tile_set = SubResource("TileSet_sgba2")
 
 [node name="Label" type="Label" parent="Info_panel/Panel"]
+z_index = 11
 offset_left = 40.0
 offset_top = 436.0
 offset_right = 1147.0
 offset_bottom = 583.0
 
 [node name="Top_label" type="Label" parent="Info_panel/Panel"]
-offset_right = 40.0
-offset_bottom = 23.0
+z_index = 11
+offset_left = 418.0
+offset_top = 208.0
+offset_right = 755.0
+offset_bottom = 273.0
 
 [node name="ColorRect" type="ColorRect" parent="Info_panel"]
 modulate = Color(1, 1, 1, 0)
@@ -4953,8 +4958,8 @@ offset_bottom = 649.0
 [node name="Sign_post" type="Area2D" parent="."]
 collision_mask = 2
 script = ExtResource("19_pa8vs")
-message = "This is a test"
-title = "TEST"
+message = "Yay it does"
+title = "Works"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sign_post"]
 position = Vector2(3203, 847)

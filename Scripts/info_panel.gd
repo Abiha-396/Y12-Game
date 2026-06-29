@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var event_panel=$Panel
 @onready var colour_rect=$ColorRect
 @export var message: String = ""
+@export var top_message: String = ""
 @export var one_shot: bool = true
 @export var display_duration: float = 1.0
 
@@ -13,9 +14,12 @@ func _ready():
 	event_panel.visible=false
 	print("ready")
 	colour_rect.modulate= Color("ffffff00")
+	GlobalScript.intro_requested.connect(_on_intro_requested)
 
 
-func show_event_text(message: String):
+
+
+func _on_intro_requested(title: String, body: String):
 	colour_rect.modulate= Color("0b0c0c6f")
 	get_tree().paused = true
 	event_text.text = message
@@ -28,8 +32,11 @@ func show_event_text(message: String):
 	colour_rect.modulate= Color("ffffff00")
 
 
+
+
+
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	show_event_text(message)
+	_on_intro_requested(message, Title)
 
 
 

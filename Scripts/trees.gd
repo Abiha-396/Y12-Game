@@ -14,3 +14,4 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func _on_area_2d_2_body_entered(body: Node2D) -> void:
 	tree.hide()
 	GlobalScript.tree=true
+	GlobalScript.resource_collected.emit("wood", 1)

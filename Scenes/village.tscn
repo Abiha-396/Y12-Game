@@ -1,11 +1,10 @@
-[gd_scene load_steps=34 format=4 uid="uid://bco4ppe2377xg"]
+[gd_scene load_steps=23 format=4 uid="uid://bco4ppe2377xg"]
 
 [ext_resource type="Script" uid="uid://cyh04j2ldlbk3" path="res://village.gd" id="1_lwl7v"]
 [ext_resource type="Texture2D" uid="uid://bvgfywuu306dx" path="res://Assets/Characters/Blue Units/Monk/Idle.png" id="5_78u5i"]
 [ext_resource type="Texture2D" uid="uid://dxl5sjc0e1squ" path="res://Assets/Buildings/Red Buildings/Monastery.png" id="5_yf0b0"]
 [ext_resource type="Script" uid="uid://6lq5txvfaie5" path="res://Scripts/monk.gd" id="6_om0bm"]
 [ext_resource type="Script" uid="uid://dnulh6tfhk5fm" path="res://Scripts/wood_cutting.gd" id="7_lwl7v"]
-[ext_resource type="Texture2D" uid="uid://dwd04hy6e5eys" path="res://Assets/Terrain/Resources/Wood/Trees/Tree2.png" id="8_d5xyy"]
 [ext_resource type="Script" uid="uid://ctqjsvqkm3m66" path="res://Scripts/trees.gd" id="8_lwl7v"]
 [ext_resource type="PackedScene" uid="uid://bf017do7gcmnm" path="res://Scenes/Pick-up.tscn" id="10_7en6d"]
 
@@ -150,74 +149,6 @@ height = 62.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kq6pr"]
 size = Vector2(43.5, 290.5)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8uog6"]
-atlas = ExtResource("8_d5xyy")
-region = Rect2(0, 0, 192, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_36r41"]
-atlas = ExtResource("8_d5xyy")
-region = Rect2(192, 0, 192, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kq6pr"]
-atlas = ExtResource("8_d5xyy")
-region = Rect2(384, 0, 192, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5f43a"]
-atlas = ExtResource("8_d5xyy")
-region = Rect2(576, 0, 192, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0i4px"]
-atlas = ExtResource("8_d5xyy")
-region = Rect2(768, 0, 192, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oveex"]
-atlas = ExtResource("8_d5xyy")
-region = Rect2(960, 0, 192, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i2h3s"]
-atlas = ExtResource("8_d5xyy")
-region = Rect2(1152, 0, 192, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cyvso"]
-atlas = ExtResource("8_d5xyy")
-region = Rect2(1344, 0, 192, 256)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_nwfgd"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8uog6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_36r41")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kq6pr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5f43a")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0i4px")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_oveex")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i2h3s")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cyvso")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7en6d"]
-radius = 24.9659
-height = 139.285
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_om0bm"]
 size = Vector2(61, 46)
@@ -521,21 +452,6 @@ position = Vector2(1086, -20)
 scale = Vector2(0.841146, 0.775391)
 script = ExtResource("8_lwl7v")
 
-[node name="Tree" type="AnimatedSprite2D" parent="Wood_cutting/Trees"]
-position = Vector2(-101.053, 19.3451)
-sprite_frames = SubResource("SpriteFrames_nwfgd")
-autoplay = "default"
-frame_progress = 0.592945
-
-[node name="Area2D2" type="Area2D" parent="Wood_cutting/Trees/Tree"]
-position = Vector2(1005.77, -1086.81)
-collision_layer = 32
-collision_mask = 18
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wood_cutting/Trees/Tree/Area2D2"]
-position = Vector2(-1003.39, 1110.02)
-shape = SubResource("CapsuleShape2D_7en6d")
-
 [node name="Sprite2D" type="Sprite2D" parent="Wood_cutting/Trees"]
 
 [node name="Tool02" parent="Wood_cutting/Trees" instance=ExtResource("10_7en6d")]
@@ -558,4 +474,3 @@ tile_set = SubResource("TileSet_hsw83")
 [connection signal="area_entered" from="Monk/Area2D" to="Monk" method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Monk/Area2D" to="Monk" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Wood_cutting/Area2D" to="Wood_cutting" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Wood_cutting/Trees/Tree/Area2D2" to="Wood_cutting/Trees" method="_on_area_2d_2_body_entered"]
