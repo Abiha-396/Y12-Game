@@ -13,5 +13,5 @@ func _on_resource_collected(type: String, amount: int):
 func _check_rank_up():
 	for key in thresholds:
 		if resources[key] < thresholds[key]:
-			return
-   GlobalScript.rank_changed.emit("Knight")
+			return 
+			GlobalScript.rank_changed.emit("Knight")
