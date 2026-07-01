@@ -1,9 +1,12 @@
 extends Area2D
 
+@export var message: String = ""
+@export var title: String = ""
+var can_trigger: bool = true
 
-# Define the custom signal with a text parameter
-signal message_sent(title: String, message:String)
-@export var message=""
-@export var title=""
-func send_text():
-	message_sent.emit(title,message)
+func _on_body_entered(body: Node2D) -> void:
+	if can_trigger:
+		can_trigger = false
+		GlobalScript.intro_requested.emit(title, message)
+		await get_tree().create_timer(2.0).timeout
+		can_trigger = true

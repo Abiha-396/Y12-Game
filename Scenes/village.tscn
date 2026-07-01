@@ -1,6 +1,7 @@
-[gd_scene load_steps=23 format=4 uid="uid://bco4ppe2377xg"]
+[gd_scene load_steps=24 format=4 uid="uid://bco4ppe2377xg"]
 
 [ext_resource type="Script" uid="uid://cyh04j2ldlbk3" path="res://village.gd" id="1_lwl7v"]
+[ext_resource type="PackedScene" uid="uid://bfrf8jtdq1voq" path="res://Scenes/sign_post.tscn" id="4_yf0b0"]
 [ext_resource type="Texture2D" uid="uid://bvgfywuu306dx" path="res://Assets/Characters/Blue Units/Monk/Idle.png" id="5_78u5i"]
 [ext_resource type="Texture2D" uid="uid://dxl5sjc0e1squ" path="res://Assets/Buildings/Red Buildings/Monastery.png" id="5_yf0b0"]
 [ext_resource type="Script" uid="uid://6lq5txvfaie5" path="res://Scripts/monk.gd" id="6_om0bm"]
@@ -419,6 +420,9 @@ offset_bottom = 183.0
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="Sign_post" parent="Monk" instance=ExtResource("4_yf0b0")]
+title = "Monk"
 
 [node name="Wood_cutting" type="Node2D" parent="."]
 position = Vector2(-622, 264)
