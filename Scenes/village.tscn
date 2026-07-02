@@ -1,10 +1,9 @@
-[gd_scene load_steps=24 format=4 uid="uid://bco4ppe2377xg"]
+[gd_scene load_steps=21 format=4 uid="uid://bco4ppe2377xg"]
 
 [ext_resource type="Script" uid="uid://cyh04j2ldlbk3" path="res://village.gd" id="1_lwl7v"]
 [ext_resource type="PackedScene" uid="uid://bfrf8jtdq1voq" path="res://Scenes/sign_post.tscn" id="4_yf0b0"]
 [ext_resource type="Texture2D" uid="uid://bvgfywuu306dx" path="res://Assets/Characters/Blue Units/Monk/Idle.png" id="5_78u5i"]
 [ext_resource type="Texture2D" uid="uid://dxl5sjc0e1squ" path="res://Assets/Buildings/Red Buildings/Monastery.png" id="5_yf0b0"]
-[ext_resource type="Script" uid="uid://6lq5txvfaie5" path="res://Scripts/monk.gd" id="6_om0bm"]
 [ext_resource type="Script" uid="uid://dnulh6tfhk5fm" path="res://Scripts/wood_cutting.gd" id="7_lwl7v"]
 [ext_resource type="Script" uid="uid://ctqjsvqkm3m66" path="res://Scripts/trees.gd" id="8_lwl7v"]
 [ext_resource type="PackedScene" uid="uid://bf017do7gcmnm" path="res://Scenes/Pick-up.tscn" id="10_7en6d"]
@@ -144,15 +143,8 @@ _data = {
 &"RESET": SubResource("Animation_kq6pr")
 }
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8uog6"]
-radius = 28.0
-height = 62.0
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kq6pr"]
 size = Vector2(43.5, 290.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_om0bm"]
-size = Vector2(61, 46)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yf0b0"]
 texture = ExtResource("5_yf0b0")
@@ -391,38 +383,16 @@ visible = false
 position = Vector2(-530, 121)
 sprite_frames = SubResource("SpriteFrames_cibu2")
 frame_progress = 0.315866
-script = ExtResource("6_om0bm")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Monk"]
 libraries = {
 &"": SubResource("AnimationLibrary_5f43a")
 }
 
-[node name="Camera2D" type="Camera2D" parent="Monk"]
-position = Vector2(530, -121)
-
-[node name="Area2D" type="Area2D" parent="Monk"]
-position = Vector2(3, 0)
-collision_layer = 4
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Monk/Area2D"]
-shape = SubResource("CapsuleShape2D_8uog6")
-
-[node name="Panel" type="Panel" parent="Monk"]
-visible = false
-offset_left = -92.0
-offset_top = 143.0
-offset_right = 199.0
-offset_bottom = 183.0
-
-[node name="Label" type="Label" parent="Monk/Panel"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-
 [node name="Sign_post" parent="Monk" instance=ExtResource("4_yf0b0")]
-title = "Monk"
+position = Vector2(4, 18)
+message = "The land is the wealth. It shall provide you with life-sustaining necessities. Return only when you have collected enough."
+title = "The Village- a home for the wanderers"
 
 [node name="Wood_cutting" type="Node2D" parent="."]
 position = Vector2(-622, 264)
@@ -461,20 +431,11 @@ script = ExtResource("8_lwl7v")
 [node name="Tool02" parent="Wood_cutting/Trees" instance=ExtResource("10_7en6d")]
 position = Vector2(-337.635, 413.985)
 
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(-529, -10)
-
-[node name="Area2D" type="Area2D" parent="Node2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D"]
-position = Vector2(2, 120)
-shape = SubResource("RectangleShape2D_om0bm")
-
 [node name="Buildings" type="TileMapLayer" parent="."]
 z_index = 5
 tile_map_data = PackedByteArray("AADa////AAABAAkAAADa/wAAAAABAAoAAADa/wEAAAABAAsAAADa/wIAAAABAAwAAADa/wMAAAABAA0AAADa/wQAAAABAA4AAADa/wUAAAABAA8AAADa/wYAAAABABAAAADa/wcAAAABABEAAADa/wgAAAABABIAAADb//7/AAACAAgAAADb////AAACAAkAAADb/wAAAAACAAoAAADb/wEAAAACAAsAAADb/wIAAAACAAwAAADb/wMAAAACAA0AAADb/wQAAAACAA4AAADb/wUAAAACAA8AAADb/wYAAAACABAAAADb/wcAAAACABEAAADb/wgAAAACABIAAADb/wkAAAACABMAAADc//z/AAADAAYAAADc//3/AAADAAcAAADc//7/AAADAAgAAADc////AAADAAkAAADc/wAAAAADAAoAAADc/wEAAAADAAsAAADc/wIAAAADAAwAAADc/wMAAAADAA0AAADc/wQAAAADAA4AAADc/wUAAAADAA8AAADc/wYAAAADABAAAADc/wcAAAADABEAAADc/wgAAAADABIAAADc/wkAAAADABMAAADd//v/AAAEAAUAAADd//z/AAAEAAYAAADd//3/AAAEAAcAAADd//7/AAAEAAgAAADd////AAAEAAkAAADd/wAAAAAEAAoAAADd/wEAAAAEAAsAAADd/wIAAAAEAAwAAADd/wMAAAAEAA0AAADd/wQAAAAEAA4AAADd/wUAAAAEAA8AAADd/wYAAAAEABAAAADd/wcAAAAEABEAAADd/wgAAAAEABIAAADd/wkAAAAEABMAAADe//j/AAAFAAIAAADe//n/AAAFAAMAAADe//r/AAAFAAQAAADe//v/AAAFAAUAAADe//z/AAAFAAYAAADe//3/AAAFAAcAAADe//7/AAAFAAgAAADe////AAAFAAkAAADe/wAAAAAFAAoAAADe/wEAAAAFAAsAAADe/wIAAAAFAAwAAADe/wMAAAAFAA0AAADe/wQAAAAFAA4AAADe/wUAAAAFAA8AAADe/wYAAAAFABAAAADe/wcAAAAFABEAAADe/wgAAAAFABIAAADe/wkAAAAFABMAAADf//j/AAAGAAIAAADf//n/AAAGAAMAAADf//r/AAAGAAQAAADf//v/AAAGAAUAAADf//z/AAAGAAYAAADf//3/AAAGAAcAAADf//7/AAAGAAgAAADf////AAAGAAkAAADf/wAAAAAGAAoAAADf/wEAAAAGAAsAAADf/wIAAAAGAAwAAADf/wMAAAAGAA0AAADf/wQAAAAGAA4AAADf/wUAAAAGAA8AAADf/wYAAAAGABAAAADf/wcAAAAGABEAAADf/wgAAAAGABIAAADf/wkAAAAGABMAAADg//v/AAAHAAUAAADg//z/AAAHAAYAAADg//3/AAAHAAcAAADg//7/AAAHAAgAAADg////AAAHAAkAAADg/wAAAAAHAAoAAADg/wEAAAAHAAsAAADg/wIAAAAHAAwAAADg/wMAAAAHAA0AAADg/wQAAAAHAA4AAADg/wUAAAAHAA8AAADg/wYAAAAHABAAAADg/wcAAAAHABEAAADg/wgAAAAHABIAAADg/wkAAAAHABMAAADh//z/AAAIAAYAAADh//3/AAAIAAcAAADh//7/AAAIAAgAAADh////AAAIAAkAAADh/wAAAAAIAAoAAADh/wEAAAAIAAsAAADh/wIAAAAIAAwAAADh/wMAAAAIAA0AAADh/wQAAAAIAA4AAADh/wUAAAAIAA8AAADh/wYAAAAIABAAAADh/wcAAAAIABEAAADh/wgAAAAIABIAAADh/wkAAAAIABMAAADi//7/AAAJAAgAAADi////AAAJAAkAAADi/wAAAAAJAAoAAADi/wEAAAAJAAsAAADi/wIAAAAJAAwAAADi/wMAAAAJAA0AAADi/wQAAAAJAA4AAADi/wUAAAAJAA8AAADi/wYAAAAJABAAAADi/wcAAAAJABEAAADi/wgAAAAJABIAAADi/wkAAAAJABMAAADj////AAAKAAkAAADj/wAAAAAKAAoAAADj/wEAAAAKAAsAAADj/wIAAAAKAAwAAADj/wMAAAAKAA0AAADj/wQAAAAKAA4AAADj/wUAAAAKAA8AAADj/wYAAAAKABAAAADj/wcAAAAKABEAAADj/wgAAAAKABIAAAA=")
 tile_set = SubResource("TileSet_hsw83")
 
-[connection signal="area_entered" from="Monk/Area2D" to="Monk" method="_on_area_2d_area_entered"]
-[connection signal="body_entered" from="Monk/Area2D" to="Monk" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Wood_cutting/Area2D" to="Wood_cutting" method="_on_area_2d_body_entered"]
+
+[editable path="Monk/Sign_post"]

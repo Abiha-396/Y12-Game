@@ -4877,7 +4877,7 @@ tile_set = SubResource("TileSet_mrs20")
 scroll_offset = Vector2(-1318, 956)
 
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("2_n5262")]
-position = Vector2(3389, 1292)
+position = Vector2(81, 354)
 
 [node name="Rocks" parent="." instance=ExtResource("5_kul6x")]
 position = Vector2(2949, 562)
@@ -4950,5 +4950,8 @@ offset_right = 1153.0
 offset_bottom = 649.0
 
 [node name="Sign_post" parent="." instance=ExtResource("19_pa8vs")]
+position = Vector2(-3114, -654)
+message = "Your Quest begins: the terrain is yours, go and conquer"
+title = "Welcome"
 
 [editable path="Backgound"]
