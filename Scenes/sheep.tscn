@@ -276,6 +276,7 @@ _data = {
 radius = 88.8426
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dlixe"]
+radius = 9.48683
 
 [node name="Sheep" type="Node2D"]
 

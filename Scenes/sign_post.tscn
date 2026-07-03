@@ -4,7 +4,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_st0hs"]
 radius = 12.0
-height = 64.0
+height = 38.0
 
 [node name="Sign_post" type="Area2D"]
 collision_mask = 2
@@ -13,7 +13,7 @@ message = "Yay it does"
 title = "Works"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3203, 847)
+position = Vector2(-1, 0)
 shape = SubResource("CapsuleShape2D_st0hs")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
