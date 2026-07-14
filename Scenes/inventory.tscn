@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://bb2lsw13dhujn"]
+
+[ext_resource type="Script" uid="uid://q1jx82imrweo" path="res://Scripts/grid_container.gd" id="1_wdn4f"]
+[ext_resource type="PackedScene" uid="uid://byh240p0r6gv1" path="res://Scenes/slot.tscn" id="2_sd8fj"]
+[ext_resource type="Texture2D" uid="uid://c03ybd4t7wo0e" path="res://Assets/UI Elements/UI Elements/Icons/Icon_02.png" id="3_trvqw"]
+[ext_resource type="Texture2D" uid="uid://hfjpkglmyior" path="res://Assets/UI Elements/UI Elements/Icons/Icon_03.png" id="4_aqnmd"]
+[ext_resource type="Texture2D" uid="uid://jpk12l3l5qtv" path="res://Assets/UI Elements/UI Elements/Icons/Icon_04.png" id="5_o4ksx"]
+[ext_resource type="Texture2D" uid="uid://df6shkbkbax8p" path="res://Assets/UI Elements/UI Elements/Icons/Icon_05.png" id="6_5qg7d"]
+[ext_resource type="Texture2D" uid="uid://bhdjjhg7wuj8d" path="res://Assets/UI Elements/UI Elements/Icons/Icon_06.png" id="7_bvt08"]
+
+[node name="Inventory" type="GridContainer"]
+z_index = 5
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 5
+script = ExtResource("1_wdn4f")
+
+[node name="Log" parent="." instance=ExtResource("2_sd8fj")]
+layout_mode = 2
+texture = ExtResource("3_trvqw")
+item_name = "Wood"
+
+[node name="Coin" parent="." instance=ExtResource("2_sd8fj")]
+layout_mode = 2
+texture = ExtResource("4_aqnmd")
+item_name = "Coin"
+
+[node name="Meat" parent="." instance=ExtResource("2_sd8fj")]
+layout_mode = 2
+texture = ExtResource("5_o4ksx")
+item_name = "MEEET"
+
+[node name="Sword" parent="." instance=ExtResource("2_sd8fj")]
+layout_mode = 2
+texture = ExtResource("6_5qg7d")
+item_name = "Sword"
+
+[node name="Shield" parent="." instance=ExtResource("2_sd8fj")]
+layout_mode = 2
+texture = ExtResource("7_bvt08")
+item_name = "Shield"
+
+[editable path="Log"]
+[editable path="Coin"]
+[editable path="Meat"]
+[editable path="Sword"]
+[editable path="Shield"]

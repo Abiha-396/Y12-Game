@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://cso64kjej10fb"]
+[gd_scene load_steps=16 format=4 uid="uid://cso64kjej10fb"]
 
 [ext_resource type="Texture2D" uid="uid://qp0ckqmxesea" path="res://Assets/UI Elements/UI Elements/Buttons/TinyRoundBlueButton.png" id="1_dc2ao"]
 [ext_resource type="Script" uid="uid://c5k22wwjq3pbr" path="res://Scripts/buttons.gd" id="1_r3kxo"]
@@ -11,8 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bhdjjhg7wuj8d" path="res://Assets/UI Elements/UI Elements/Icons/Icon_06.png" id="9_ljimj"]
 [ext_resource type="Texture2D" uid="uid://j2a24btuvr0m" path="res://Assets/UI Elements/UI Elements/Banners/Banner_Slots.png" id="10_y5w6w"]
 [ext_resource type="Texture2D" uid="uid://58lb62305kg1" path="res://Assets/UI Elements/UI Elements/Banners/Banner.png" id="11_ljimj"]
-[ext_resource type="PackedScene" uid="uid://lb3uj6kc8lq3" path="res://Scenes/menu_resources.tscn" id="12_b2qy2"]
-[ext_resource type="Texture2D" uid="uid://c03ybd4t7wo0e" path="res://Assets/UI Elements/UI Elements/Icons/Icon_02.png" id="13_gf7if"]
+[ext_resource type="PackedScene" uid="uid://bb2lsw13dhujn" path="res://Scenes/inventory.tscn" id="12_ljimj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b2qy2"]
 texture = ExtResource("10_y5w6w")
@@ -521,19 +520,13 @@ offset_right = 371.0
 offset_bottom = 505.0
 text = "Close"
 
-[node name="Menu_resources" parent="Top-right/ProgressBar/Relics book/TileMapLayer" instance=ExtResource("12_b2qy2")]
-offset_left = -55.0
-offset_top = 81.0
-offset_right = -55.0
-offset_bottom = 81.0
-
-[node name="Sprite2D" parent="Top-right/ProgressBar/Relics book/TileMapLayer/Menu_resources" index="0"]
-position = Vector2(90, 177)
-texture = ExtResource("13_gf7if")
+[node name="Inventory" parent="Top-right/ProgressBar/Relics book/TileMapLayer" instance=ExtResource("12_ljimj")]
+offset_left = 17.0
+offset_top = 235.0
+offset_right = 353.0
+offset_bottom = 367.0
 
 [connection signal="pressed" from="Top-right/HBoxContainer/Home" to="." method="_on_home_pressed"]
 [connection signal="pressed" from="Top-right/HBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Top-right/ProgressBar/Relics book" to="." method="_on_relics_book_pressed"]
 [connection signal="pressed" from="Top-right/ProgressBar/Relics book/TileMapLayer/Close" to="." method="_on_close_pressed"]
-
-[editable path="Top-right/ProgressBar/Relics book/TileMapLayer/Menu_resources"]

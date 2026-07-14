@@ -16,4 +16,5 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_mouse_entered() -> void:
+		InventoryManager.add_item("relic_shield")
 		sprite.modulate= Color.GREEN_YELLOW

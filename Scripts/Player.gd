@@ -1,27 +1,22 @@
 extends CharacterBody2D
 
 @export var speed = 200.0
-const acceleration =100
-const friction= 1000
+const acceleration = 100
+const friction = 1000
 
-enum {IDLE, RUN}
-var state = IDLE
+enum State { IDLE, RUN }
+enum Rank { PAWN, KNIGHT, KING }
 
-@onready var animation_tree= $AnimationTree
+var state = State.IDLE
+var current_rank = Rank.PAWN
+var rank_prefix = "pawn"
+
 @onready var animator = $AnimationPlayer
 @onready var sprite = $AnimatedSprite2D
-@onready var state_machine= animation_tree["parameters/playback"]
 
-#var blend_position : Vector2 = Vector2.ZERO
-#var blend_pos_paths = [
-	#"parameters/Idle/Idle_bs2D/blend_position",
-	#"parameters/Run/Run_bs2D/blend_position"
-#]
+func _ready():
+	GlobalScript.rank_changed.connect(_on_rank_changed)
 
-var anim_tree_state_keys = [
-	"idle",
-	"run"
-]
 func _physics_process(delta):
 	move(delta)
 	animate()
@@ -29,36 +24,42 @@ func _physics_process(delta):
 func move(delta):
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	if direction == Vector2.ZERO:
-		state= IDLE
-		apply_friction(friction*delta)
+		state = State.IDLE
+		apply_friction(friction * delta)
 	else:
-		state=RUN
-		apply_movement(direction*acceleration)
+		state = State.RUN
+		apply_movement(direction * acceleration)
+
 	if direction.x < 0:
 		sprite.flip_h = true
 	elif direction.x > 0:
-		sprite.flip_h = false #no else, it will stay facing the last direction pressed
-		#the addon is called animated sprite to animation player convertor 4.0
-		
-		#blend_position= direction
+		sprite.flip_h = false
+
 	move_and_slide()
-	
+
 func apply_friction(amount) -> void:
-	if velocity.length()> amount:
+	if velocity.length() > amount:
 		velocity -= velocity.normalized() * amount
 	else:
-		velocity= Vector2.ZERO
-	
+		velocity = Vector2.ZERO
+
 func apply_movement(amount) -> void:
-	velocity +=amount
-	velocity= velocity.limit_length (speed)
-	
+	velocity += amount
+	velocity = velocity.limit_length(speed)
 
 func animate() -> void:
 	match state:
-		IDLE:
-			animator.play("Idle_right")
-		RUN:
-			animator.play("Run_right")
-	#state_machine.travel(anim_tree_state_keys[state])
-	#animation_tree.set(blend_pos_paths[state],blend_position)
+		State.IDLE:
+			animator.play(rank_prefix + "_idle")
+		State.RUN:
+			animator.play(rank_prefix + "_run")
+
+func _on_rank_changed(new_rank: Rank) -> void:
+	current_rank = new_rank
+	match new_rank:
+		Rank.PAWN:
+			rank_prefix = "pawn"
+		Rank.KNIGHT:
+			rank_prefix = "lancer"
+		Rank.KING:
+			rank_prefix = "king"
