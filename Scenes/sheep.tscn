@@ -1,9 +1,33 @@
-[gd_scene load_steps=35 format=3 uid="uid://b2nyxxrk1s61j"]
+[gd_scene load_steps=37 format=3 uid="uid://b2nyxxrk1s61j"]
 
 [ext_resource type="Script" uid="uid://bfcjeigvp31mo" path="res://Scripts/Sheep.gd" id="1_dlixe"]
 [ext_resource type="Texture2D" uid="uid://btu1bk8eu6aul" path="res://Assets/Terrain/Resources/Meat/Sheep/Sheep_Grass.png" id="1_okt0m"]
 [ext_resource type="Texture2D" uid="uid://b3xg6c2fpm0a7" path="res://Assets/Terrain/Resources/Meat/Sheep/Sheep_Idle.png" id="2_dlixe"]
 [ext_resource type="Texture2D" uid="uid://dx1dnk852rrx4" path="res://Assets/Terrain/Resources/Meat/Sheep/Sheep_Move.png" id="3_nqg6p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85olw"]
+atlas = ExtResource("2_dlixe")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52vrb"]
+atlas = ExtResource("2_dlixe")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jicen"]
+atlas = ExtResource("2_dlixe")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ac2v"]
+atlas = ExtResource("2_dlixe")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6ino"]
+atlas = ExtResource("2_dlixe")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjshj"]
+atlas = ExtResource("2_dlixe")
+region = Rect2(640, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bvhs2"]
 atlas = ExtResource("1_okt0m")
@@ -53,30 +77,6 @@ region = Rect2(1280, 0, 128, 128)
 atlas = ExtResource("1_okt0m")
 region = Rect2(1408, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_85olw"]
-atlas = ExtResource("2_dlixe")
-region = Rect2(0, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_52vrb"]
-atlas = ExtResource("2_dlixe")
-region = Rect2(128, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jicen"]
-atlas = ExtResource("2_dlixe")
-region = Rect2(256, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2ac2v"]
-atlas = ExtResource("2_dlixe")
-region = Rect2(384, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v6ino"]
-atlas = ExtResource("2_dlixe")
-region = Rect2(512, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hjshj"]
-atlas = ExtResource("2_dlixe")
-region = Rect2(640, 0, 128, 128)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_5xufj"]
 atlas = ExtResource("3_nqg6p")
 region = Rect2(0, 0, 128, 128)
@@ -95,6 +95,29 @@ region = Rect2(384, 0, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0tg2m"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85olw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52vrb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jicen")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ac2v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6ino")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjshj")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bvhs2")
@@ -179,6 +202,82 @@ animations = [{
 
 [sub_resource type="Animation" id="Animation_nqg6p"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_dlixe"]
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["death"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0333333, 0.566667, 0.7, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.466667, 0.766667, 1.13333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.556863, 0.0666667, 0.101961, 1), Color(0.997214, 0.728413, 0.69105, 1), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_wqx1u"]
 length = 2.4
@@ -238,7 +337,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_a5b7q"]
 length = 0.8
-loop_mode = 2
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -267,6 +366,7 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eefk6"]
 _data = {
 &"RESET": SubResource("Animation_nqg6p"),
+&"death": SubResource("Animation_dlixe"),
 &"grazing": SubResource("Animation_wqx1u"),
 &"idle": SubResource("Animation_pegc6"),
 &"running": SubResource("Animation_a5b7q")
@@ -275,8 +375,10 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_bvhs2"]
 radius = 88.8426
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_nqg6p"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_dlixe"]
-radius = 9.48683
+radius = 3.60555
 
 [node name="Sheep" type="Node2D"]
 
@@ -286,7 +388,7 @@ script = ExtResource("1_dlixe")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 position = Vector2(10, 2)
 sprite_frames = SubResource("SpriteFrames_0tg2m")
-animation = &"running"
+animation = &"death"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D/AnimatedSprite2D"]
 libraries = {
@@ -300,11 +402,24 @@ collision_layer = 33
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
+light_mask = 32
+visibility_layer = 2
 position = Vector2(4, -4)
 shape = SubResource("CircleShape2D_bvhs2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CatchArea" type="Area2D" parent="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/CatchArea"]
+light_mask = 32
+visibility_layer = 2
 position = Vector2(10, -5)
+shape = SubResource("CircleShape2D_nqg6p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+light_mask = 32
+visibility_layer = 2
+position = Vector2(9, -5)
 shape = SubResource("CircleShape2D_dlixe")
 
 [connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="CharacterBody2D/CatchArea" to="CharacterBody2D" method="_on_catch_area_body_entered"]

@@ -11,7 +11,7 @@ var state = State.IDLE
 var current_rank = Rank.PAWN
 var rank_prefix = "pawn"
 
-@onready var animator = $AnimationPlayer
+@onready var animator = $AnimatedSprite2D/AnimationPlayer
 @onready var sprite = $AnimatedSprite2D
 
 func _ready():
