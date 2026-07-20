@@ -229,7 +229,6 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_dlixe"]
 length = 1.2
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -383,18 +382,20 @@ radius = 3.60555
 [node name="Sheep" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+z_index = 11
 script = ExtResource("1_dlixe")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 position = Vector2(10, 2)
 sprite_frames = SubResource("SpriteFrames_0tg2m")
 animation = &"death"
+frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D/AnimatedSprite2D"]
 libraries = {
 &"": SubResource("AnimationLibrary_eefk6")
 }
-autoplay = "idle"
+autoplay = "grazing"
 
 [node name="Area2D" type="Area2D" parent="CharacterBody2D"]
 position = Vector2(9, -4)
@@ -404,10 +405,12 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
 light_mask = 32
 visibility_layer = 2
-position = Vector2(4, -4)
+position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_bvhs2")
 
 [node name="CatchArea" type="Area2D" parent="CharacterBody2D"]
+collision_layer = 32
+collision_mask = 18
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/CatchArea"]
 light_mask = 32
@@ -418,7 +421,7 @@ shape = SubResource("CircleShape2D_nqg6p")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 light_mask = 32
 visibility_layer = 2
-position = Vector2(9, -5)
+position = Vector2(10, -4)
 shape = SubResource("CircleShape2D_dlixe")
 
 [connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
