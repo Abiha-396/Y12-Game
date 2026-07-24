@@ -4,9 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://bdnjhy5w7snll" path="res://Assets/Terrain/Resources/Meat/Meat Resource/Meat Resource.png" id="2_33tcv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wg3yg"]
-radius = 15.2971
+radius = 21.4709
 
 [node name="Meat" type="Area2D"]
+collision_layer = 33
+collision_mask = 2
 script = ExtResource("1_p2df8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -15,3 +17,5 @@ shape = SubResource("CircleShape2D_wg3yg")
 [node name="MeatResource" type="Sprite2D" parent="."]
 position = Vector2(4, -2)
 texture = ExtResource("2_33tcv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

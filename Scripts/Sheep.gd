@@ -42,16 +42,16 @@ func _on_catch_area_body_entered(body: Node2D) -> void:
 		is_dying = true
 		is_running = false
 		velocity = Vector2.ZERO
-		animation_player.play("death")
+		$AnimatedSprite2D/AnimationPlayer.play("death")
 		print("DEAD!")
-		await get_tree().create_timer(1).timeout
-		print("animation done, spawning meat")
-		queue_free()
+		await animation_player.animation_finished
 		_turn_into_meat()
+		queue_free()
+		
 
 func _turn_into_meat() -> void:
-	print("I'm turning into meat")
 	var meat = preload("res://Scenes/meat.tscn").instantiate()
 	meat.global_position = global_position
-	get_parent().add_child(meat)
+	get_tree().current_scene.add_child(meat) 
+
 	
