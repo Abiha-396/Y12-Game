@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://byh240p0r6gv1"]
 
-[ext_resource type="Script" uid="uid://dfpf1hnbfee82" path="res://Scripts/slot.gd" id="1_luhj6"]
+[ext_resource type="Script" path="res://Scripts/slot.gd" id="1_luhj6"]
 
 [node name="Slot" type="TextureRect"]
 offset_right = 40.0

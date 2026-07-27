@@ -5630,7 +5630,6 @@ position = Vector2(1825, -83)
 position = Vector2(6653, 1272)
 
 [node name="Backgound" parent="." instance=ExtResource("7_5g67m")]
-visible = false
 offset_left = 83.0
 offset_top = -57.0
 offset_right = 83.0
@@ -5647,9 +5646,6 @@ offset_right = 1176.0
 offset_bottom = 651.0
 texture = ExtResource("1_mlqre")
 
-[node name="Buttons" parent="Backgound/Buttons" index="0"]
-visible = false
-
 [node name="Ocean" type="TileMapLayer" parent="."]
 z_index = -1
 position = Vector2(-9, 12)
@@ -5657,7 +5653,6 @@ tile_map_data = PackedByteArray("AACmAGsAAQAAAAAAAABjAGsAAQAAAAAAAAAhAD0AAQAAAAA
 tile_set = SubResource("TileSet_st0hs")
 
 [node name="Info_panel" type="CanvasLayer" parent="."]
-visible = false
 script = ExtResource("14_lkdmu")
 
 [node name="Panel" type="TileMapLayer" parent="Info_panel"]

@@ -1,5 +1,3 @@
-[gd_scene load_steps=2 format=3 uid="uid://bc1yu21drhm1"]
+[gd_scene format=3 uid="uid://bc1yu21drhm1"]
 
-[ext_resource type="PackedScene" uid="uid://daoyphc0qk7up" path="res://Scenes/base_player.tscn" id="1_eu7ni"]
-
-[node name="Pawn" instance=ExtResource("1_eu7ni")]
+[node name="Pawn"]

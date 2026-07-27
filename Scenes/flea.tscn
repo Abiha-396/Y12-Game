@@ -1,6 +1,6 @@
-[gd_scene load_steps=194 format=3 uid="uid://cn7kr760yje2r"]
+[gd_scene load_steps=194 format=3 uid="uid://0b3iby703het"]
 
-[ext_resource type="Script" uid="uid://cycauuwibq75" path="res://Scripts/flea.gd" id="1_gisfq"]
+[ext_resource type="Script" path="res://Scripts/flea.gd" id="1_gisfq"]
 [ext_resource type="Texture2D" uid="uid://b5py23iciy76r" path="res://Assets/Characters/Flea/laser_attack_forward.png" id="1_tty0m"]
 [ext_resource type="Texture2D" uid="uid://b0fiacq48k2cc" path="res://Assets/Characters/Flea/death.png" id="2_gisfq"]
 [ext_resource type="Texture2D" uid="uid://cx4kx74tw1sca" path="res://Assets/Characters/Flea/hurt.png" id="3_npkqx"]
