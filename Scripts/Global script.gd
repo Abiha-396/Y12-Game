@@ -6,6 +6,7 @@ signal resource_collected(type: String, amount: int)
 signal rank_changed(new_rank: String)
 signal intro_requested(title: String, body: String)
 signal army_unit_recruited(unit_type: String)
+signal axe_picked_up
 
 func _process(delta: float) -> void:
 	if life==0:

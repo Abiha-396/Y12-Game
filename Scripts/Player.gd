@@ -13,14 +13,24 @@ var rank_prefix = "pawn"
 
 @onready var animator = $AnimatedSprite2D/AnimationPlayer
 @onready var sprite = $AnimatedSprite2D
+var has_axe: bool = false
+var anim_suffix: String = ""
+
+
 
 func _ready():
 	GlobalScript.rank_changed.connect(_on_rank_changed)
+	GlobalScript.axe_picked_up.connect(_on_axe_picked_up)
 
 func _physics_process(delta):
+	print(anim_suffix)
 	move(delta)
 	animate()
 
+func _on_axe_picked_up() -> void:
+	has_axe = true
+	anim_suffix = "_axe"
+	
 func move(delta):
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	if direction == Vector2.ZERO:
@@ -50,9 +60,9 @@ func apply_movement(amount) -> void:
 func animate() -> void:
 	match state:
 		State.IDLE:
-			animator.play(rank_prefix + "_idle")
+			animator.play(rank_prefix + "_idle" + anim_suffix)
 		State.RUN:
-			animator.play(rank_prefix + "_run")
+			animator.play(rank_prefix + "_run" + anim_suffix)
 
 func _on_rank_changed(new_rank: Rank) -> void:
 	current_rank = new_rank
@@ -63,3 +73,8 @@ func _on_rank_changed(new_rank: Rank) -> void:
 			rank_prefix = "lancer"
 		Rank.KING:
 			rank_prefix = "king"
+	match state:
+		State.IDLE:
+			animator.play(rank_prefix + "_idle" + anim_suffix)
+		State.RUN:
+			animator.play(rank_prefix + "_run" + anim_suffix)

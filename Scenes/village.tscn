@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=4 uid="uid://bco4ppe2377xg"]
 
-[ext_resource type="Script" path="res://Scripts/village.gd" id="1_lwl7v"]
+[ext_resource type="Script" uid="uid://cyh04j2ldlbk3" path="res://Scripts/village.gd" id="1_lwl7v"]
 [ext_resource type="PackedScene" uid="uid://bfrf8jtdq1voq" path="res://Scenes/sign_post.tscn" id="4_yf0b0"]
 [ext_resource type="Texture2D" uid="uid://bvgfywuu306dx" path="res://Assets/Characters/Blue Units/Monk/Idle.png" id="5_78u5i"]
 [ext_resource type="Texture2D" uid="uid://dxl5sjc0e1squ" path="res://Assets/Buildings/Red Buildings/Monastery.png" id="5_yf0b0"]
