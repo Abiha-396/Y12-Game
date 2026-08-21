@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://sqmx6a18v8ck"]
+
+[ext_resource type="Script" uid="uid://cq15antjhrxjf" path="res://Scripts/tree.gd" id="1_0vwjc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rsuno"]
+
+[node name="Tree" type="Node2D"]
+script = ExtResource("1_0vwjc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rsuno")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
+root_node = NodePath("../..")
