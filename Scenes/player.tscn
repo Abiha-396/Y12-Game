@@ -1,4 +1,4 @@
-[gd_scene load_steps=191 format=3 uid="uid://bfhx6iq054kbp"]
+[gd_scene load_steps=192 format=3 uid="uid://bfhx6iq054kbp"]
 
 [ext_resource type="Script" uid="uid://qnypwr65sxq3" path="res://Scripts/Player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://bmq2244ugvmit" path="res://Assets/Characters/Blue Units/Lancer/Lancer_Idle.png" id="1_v0iea"]
@@ -867,9 +867,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mrkcr")
 }],
-"loop": true,
+"loop": false,
 "name": &"pawn_interact_axe",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1372,7 +1372,6 @@ tracks/1/keys = {
 [sub_resource type="Animation" id="Animation_yh6i2"]
 resource_name = "Run_right"
 length = 1.2
-loop_mode = 1
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1692,6 +1691,10 @@ states/Start/position = Vector2(160, 52)
 transitions = ["Start", "Idle ", SubResource("AnimationNodeStateMachineTransition_tx1dd"), "Idle ", "Run", SubResource("AnimationNodeStateMachineTransition_gymyn"), "Run", "Idle ", SubResource("AnimationNodeStateMachineTransition_pu2lt")]
 graph_offset = Vector2(-69.4681, -16.8807)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_olqyp"]
+radius = 8.0
+height = 68.0
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 z_index = 10
 collision_layer = 2
@@ -1704,9 +1707,8 @@ shape = SubResource("CapsuleShape2D_f60y1")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_v0iea")
-animation = &"pawn_run"
+animation = &"pawn_interact_axe"
 autoplay = "pawn_idle"
-frame_progress = 0.231318
 flip_h = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
@@ -1725,3 +1727,12 @@ parameters/Run/TimeScale/scale = 1.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 1)
+
+[node name="Axe_range" type="Area2D" parent="."]
+
+[node name="Collision shape" type="CollisionShape2D" parent="Axe_range"]
+position = Vector2(28, 7)
+rotation = 1.95992
+shape = SubResource("CapsuleShape2D_olqyp")
+
+[connection signal="animation_finished" from="AnimatedSprite2D/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

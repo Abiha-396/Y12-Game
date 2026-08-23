@@ -10,22 +10,44 @@ enum Rank { PAWN, KNIGHT, KING }
 var state = State.IDLE
 var current_rank = Rank.PAWN
 var rank_prefix = "pawn"
+var current_tree = null
 
 @onready var animator = $AnimatedSprite2D/AnimationPlayer
 @onready var sprite = $AnimatedSprite2D
+@onready var axe_range=$Axe_range
 var has_axe: bool = false
 var anim_suffix: String = ""
+var is_swinging: bool = false
+
 
 
 
 func _ready():
 	GlobalScript.rank_changed.connect(_on_rank_changed)
 	GlobalScript.axe_picked_up.connect(_on_axe_picked_up)
+	
 
 func _physics_process(delta):
-	print(anim_suffix)
 	move(delta)
-	animate()
+	if not is_swinging:
+		animate()
+	if Input.is_action_just_pressed("forward_swing") and has_axe and not is_swinging:
+		is_swinging = true
+		animator.play(rank_prefix + "_interact" + anim_suffix)
+		swing_axe()
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == rank_prefix + "_interact" + anim_suffix:
+		is_swinging = false
+
+func swing_axe():
+	print("trees found: ", get_tree().get_nodes_in_group("tree"))
+	for tree in get_tree().get_nodes_in_group("tree"):
+		print("distance: ", global_position.distance_to(tree.global_position))
+		if global_position.distance_to(tree.global_position) < 100:
+			tree.take_hit()
+	
+
 
 func _on_axe_picked_up() -> void:
 	has_axe = true
@@ -78,3 +100,5 @@ func _on_rank_changed(new_rank: Rank) -> void:
 			animator.play(rank_prefix + "_idle" + anim_suffix)
 		State.RUN:
 			animator.play(rank_prefix + "_run" + anim_suffix)
+
+	

@@ -1,7 +1,8 @@
-[gd_scene load_steps=20 format=4 uid="uid://bco4ppe2377xg"]
+[gd_scene load_steps=21 format=4 uid="uid://bco4ppe2377xg"]
 
 [ext_resource type="Script" uid="uid://cyh04j2ldlbk3" path="res://Scripts/village.gd" id="1_lwl7v"]
 [ext_resource type="PackedScene" uid="uid://bfrf8jtdq1voq" path="res://Scenes/sign_post.tscn" id="4_yf0b0"]
+[ext_resource type="PackedScene" uid="uid://sqmx6a18v8ck" path="res://Scenes/tree.tscn" id="5_4ev5p"]
 [ext_resource type="Texture2D" uid="uid://bvgfywuu306dx" path="res://Assets/Characters/Blue Units/Monk/Idle.png" id="5_78u5i"]
 [ext_resource type="Texture2D" uid="uid://dxl5sjc0e1squ" path="res://Assets/Buildings/Red Buildings/Monastery.png" id="5_yf0b0"]
 [ext_resource type="Script" uid="uid://ctqjsvqkm3m66" path="res://Scripts/trees.gd" id="8_lwl7v"]
@@ -396,10 +397,11 @@ position = Vector2(1086, -20)
 scale = Vector2(0.841146, 0.775391)
 script = ExtResource("8_lwl7v")
 
-[node name="Sprite2D" type="Sprite2D" parent="Wood_cutting/Trees"]
-
 [node name="Tool02" parent="Wood_cutting/Trees" instance=ExtResource("10_7en6d")]
 position = Vector2(-337.635, 413.985)
+
+[node name="Tree" parent="Wood_cutting/Trees" instance=ExtResource("5_4ev5p")]
+position = Vector2(-86.7864, 202.478)
 
 [node name="Sign_post" parent="Wood_cutting" instance=ExtResource("4_yf0b0")]
 
