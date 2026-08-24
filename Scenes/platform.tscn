@@ -5634,6 +5634,8 @@ offset_left = 83.0
 offset_top = -57.0
 offset_right = 83.0
 offset_bottom = -57.0
+mouse_filter = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Image" parent="Backgound" index="0"]
 layer = -1
@@ -5645,6 +5647,10 @@ offset_top = -3.0
 offset_right = 1176.0
 offset_bottom = 651.0
 texture = ExtResource("1_mlqre")
+metadata/_edit_use_anchors_ = true
+
+[node name="Buttons2" parent="Backgound/Buttons" index="0"]
+metadata/_edit_use_anchors_ = true
 
 [node name="Ocean" type="TileMapLayer" parent="."]
 z_index = -1
@@ -5666,6 +5672,7 @@ offset_left = 40.0
 offset_top = 436.0
 offset_right = 1147.0
 offset_bottom = 583.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Top_label" type="Label" parent="Info_panel/Panel"]
 z_index = 11
@@ -5673,11 +5680,18 @@ offset_left = 418.0
 offset_top = 208.0
 offset_right = 755.0
 offset_bottom = 273.0
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="Info_panel"]
 modulate = Color(1, 1, 1, 0)
-offset_right = 1153.0
-offset_bottom = 649.0
+anchors_preset = -1
+anchor_right = -0.0138889
+anchor_bottom = -0.188272
+offset_left = -1178.0
+offset_top = 110.0
+offset_right = -25.0
+offset_bottom = 759.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Sign_post" parent="." instance=ExtResource("19_pa8vs")]
 position = Vector2(-3114, -654)

@@ -23,6 +23,7 @@ offset_bottom = 644.0
 
 [node name="Buttons" type="CanvasLayer" parent="."]
 
-[node name="Buttons" parent="Buttons" instance=ExtResource("1_xl3lb")]
+[node name="Buttons2" parent="Buttons" instance=ExtResource("1_xl3lb")]
 offset_right = -31.0
 offset_bottom = -11.0
+mouse_filter = 1

@@ -1,5 +1,5 @@
 extends Control
-@onready var relics_menu=$"Top-right/ProgressBar/Relics book/TileMapLayer"
+@onready var relics_menu=$"Relics book/TileMapLayer"
 @onready var progress_bar=$"Top-right/ProgressBar"
 
 
@@ -22,6 +22,7 @@ func _on_quit_pressed() -> void:
 
 func _on_relics_book_pressed() -> void:
 	relics_menu.show()
+	print("ClIcked")
 
 
 func _on_close_pressed() -> void:

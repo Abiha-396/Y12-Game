@@ -18,7 +18,7 @@ script = ExtResource("1_wdn4f")
 [node name="Log" parent="." instance=ExtResource("2_sd8fj")]
 layout_mode = 2
 texture = ExtResource("3_trvqw")
-item_name = "Wood"
+item_name = "log"
 
 [node name="Coin" parent="." instance=ExtResource("2_sd8fj")]
 layout_mode = 2
@@ -28,7 +28,7 @@ item_name = "Coin"
 [node name="Meat" parent="." instance=ExtResource("2_sd8fj")]
 layout_mode = 2
 texture = ExtResource("5_o4ksx")
-item_name = "MEEET"
+item_name = "meat"
 
 [node name="Sword" parent="." instance=ExtResource("2_sd8fj")]
 layout_mode = 2

@@ -11,5 +11,6 @@ func take_hit():
 		chop_down()
 
 func chop_down():
-	await get_tree().create_timer(0.7).timeout  
+	GlobalScript.resource_collected.emit("log", 1)
+	await get_tree().create_timer(0.7).timeout
 	animator.play("stump1")
