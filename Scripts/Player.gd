@@ -23,6 +23,7 @@ var is_swinging: bool = false
 
 
 func _ready():
+	print("Player ready")
 	GlobalScript.rank_changed.connect(_on_rank_changed)
 	GlobalScript.axe_picked_up.connect(_on_axe_picked_up)
 	
@@ -86,14 +87,17 @@ func animate() -> void:
 		State.RUN:
 			animator.play(rank_prefix + "_run" + anim_suffix)
 
-func _on_rank_changed(new_rank: Rank) -> void:
-	current_rank = new_rank
+func _on_rank_changed(new_rank: String) -> void:
+	print("rank changed received: ", new_rank)
 	match new_rank:
-		Rank.PAWN:
+		"Pawn":
+			current_rank = Rank.PAWN
 			rank_prefix = "pawn"
-		Rank.KNIGHT:
+		"Knight":
+			current_rank = Rank.KNIGHT
 			rank_prefix = "lancer"
-		Rank.KING:
+		"King":
+			current_rank = Rank.KING
 			rank_prefix = "king"
 	match state:
 		State.IDLE:

@@ -16,7 +16,6 @@ var Message=""
 func _ready():
 	event_text.visible=false
 	event_panel.visible=false
-	print("ready")
 	colour_rect.modulate= Color("ffffff00")
 	GlobalScript.intro_requested.connect(_on_intro_requested)
 	

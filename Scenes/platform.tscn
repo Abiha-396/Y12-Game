@@ -5587,7 +5587,7 @@ tile_set = SubResource("TileSet_mrs20")
 scroll_offset = Vector2(-1318, 956)
 
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("2_n5262")]
-position = Vector2(2309, 1234)
+position = Vector2(3754, 1374)
 
 [node name="Rocks" parent="." instance=ExtResource("5_kul6x")]
 position = Vector2(2949, 562)
@@ -5685,6 +5685,8 @@ metadata/_edit_use_anchors_ = true
 [node name="ColorRect" type="ColorRect" parent="Info_panel"]
 modulate = Color(1, 1, 1, 0)
 anchors_preset = -1
+anchor_left = -0.0138889
+anchor_top = -0.188272
 anchor_right = -0.0138889
 anchor_bottom = -0.188272
 offset_left = -1178.0

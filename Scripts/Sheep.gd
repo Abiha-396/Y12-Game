@@ -38,12 +38,10 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func _on_catch_area_body_entered(body: Node2D) -> void:
 	if body.name == "Player" or body.is_in_group("player") and not is_dying:
-		print("caught!")
 		is_dying = true
 		is_running = false
 		velocity = Vector2.ZERO
 		$AnimatedSprite2D/AnimationPlayer.play("death")
-		print("DEAD!")
 		await animation_player.animation_finished
 		_turn_into_meat()
 		queue_free()
