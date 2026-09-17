@@ -5587,7 +5587,7 @@ tile_set = SubResource("TileSet_mrs20")
 scroll_offset = Vector2(-1318, 956)
 
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("2_n5262")]
-position = Vector2(3754, 1374)
+position = Vector2(133, 244)
 
 [node name="Rocks" parent="." instance=ExtResource("5_kul6x")]
 position = Vector2(2949, 562)

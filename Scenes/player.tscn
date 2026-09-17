@@ -1707,8 +1707,10 @@ shape = SubResource("CapsuleShape2D_f60y1")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_v0iea")
-animation = &"pawn_interact_axe"
+animation = &"lancer_down_defence"
 autoplay = "pawn_idle"
+frame = 2
+frame_progress = 0.173314
 flip_h = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]

@@ -8,5 +8,5 @@ func _on_body_entered(body: Node2D) -> void:
 	if can_trigger:
 		can_trigger = false
 		GlobalScript.intro_requested.emit(title, message)
-		await get_tree().create_timer(4.0).timeout
+		await get_tree().create_timer(10.0).timeout
 		can_trigger = true

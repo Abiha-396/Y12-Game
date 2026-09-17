@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = -50
+const SPEED = -250
 const JUMP_VELOCITY = -400.0
 
 func _ready():
