@@ -1,9 +1,13 @@
-[gd_scene load_steps=11 format=4 uid="uid://nit5bhfduqxp"]
+[gd_scene load_steps=17 format=4 uid="uid://nit5bhfduqxp"]
 
 [ext_resource type="Texture2D" uid="uid://dj8ir0b6jm0x0" path="res://Assets/Terrain/Tileset/Water Background color.png" id="1_158mb"]
+[ext_resource type="Script" uid="uid://chilx64jtr4vn" path="res://Scripts/menu.gd" id="1_wwsa2"]
 [ext_resource type="Texture2D" uid="uid://cquss5bh0ch5f" path="res://Assets/Terrain/Decorations/Clouds/Clouds_01.png" id="2_wwsa2"]
 [ext_resource type="Texture2D" uid="uid://cbyrkybceyluu" path="res://Assets/Terrain/Decorations/Clouds/Clouds_02.png" id="3_jsrd8"]
 [ext_resource type="Texture2D" uid="uid://cxub6scjym36o" path="res://Assets/Terrain/Decorations/Clouds/Clouds_03.png" id="4_wbdvm"]
+[ext_resource type="Texture2D" uid="uid://hnyhxq513er4" path="res://Assets/UI Elements/UI Elements/Human Avatars/Avatars_05.png" id="6_q3rjx"]
+[ext_resource type="Texture2D" uid="uid://cji87r7wi37nl" path="res://Assets/UI Elements/UI Elements/Human Avatars/Avatars_02.png" id="7_6swd7"]
+[ext_resource type="Texture2D" uid="uid://brgigh3w56v7b" path="res://Assets/UI Elements/UI Elements/Human Avatars/Avatars_01.png" id="8_7qvly"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q3rjx"]
 texture = ExtResource("2_wwsa2")
@@ -384,23 +388,33 @@ sources/2 = SubResource("TileSetAtlasSource_7qvly")
 [sub_resource type="Theme" id="Theme_158mb"]
 default_font_size = 30
 
+[sub_resource type="Theme" id="Theme_rfqti"]
+default_font_size = 25
+
+[sub_resource type="Theme" id="Theme_g8i7c"]
+default_font_size = 20
+
 [sub_resource type="Theme" id="Theme_wwsa2"]
 default_font_size = 75
 
 [node name="Menu" type="Control"]
+z_index = 8
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_wwsa2")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 0
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-offset_right = 1159.0
-offset_bottom = 651.0
+offset_left = -6.0
+offset_top = 1.0
+offset_right = 1153.0
+offset_bottom = 652.0
 texture = ExtResource("1_158mb")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="CanvasLayer"]
@@ -421,6 +435,69 @@ layout_mode = 2
 theme = SubResource("Theme_158mb")
 text = "Aim of the game:
 "
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+autowrap_mode = 0
+
+[node name="Characters" type="Label" parent="CanvasLayer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_rfqti")
+text = "Introducing our squad:
+"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/ScrollContainer/VBoxContainer/Characters"]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 72.0
+offset_right = 1263.0
+offset_bottom = 251.0
+
+[node name="Pawn" type="Sprite2D" parent="CanvasLayer/ScrollContainer/VBoxContainer/Characters/HBoxContainer"]
+position = Vector2(-10, 84)
+texture = ExtResource("6_q3rjx")
+
+[node name="Label" type="Label" parent="CanvasLayer/ScrollContainer/VBoxContainer/Characters/HBoxContainer/Pawn"]
+offset_left = -71.0
+offset_top = 73.0
+offset_right = 90.0
+offset_bottom = 106.0
+theme = SubResource("Theme_g8i7c")
+text = "Bramble the Pawn
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Knight" type="Sprite2D" parent="CanvasLayer/ScrollContainer/VBoxContainer/Characters/HBoxContainer"]
+position = Vector2(272, 72)
+texture = ExtResource("7_6swd7")
+
+[node name="Label2" type="Label" parent="CanvasLayer/ScrollContainer/VBoxContainer/Characters/HBoxContainer/Knight"]
+offset_left = 215.0
+offset_top = 83.0
+offset_right = 440.0
+offset_bottom = 142.0
+theme = SubResource("Theme_g8i7c")
+text = "Valerius the Conqueror
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Conquerer" type="Sprite2D" parent="CanvasLayer/ScrollContainer/VBoxContainer/Characters/HBoxContainer"]
+position = Vector2(568, 74)
+texture = ExtResource("8_7qvly")
+
+[node name="Label3" type="Label" parent="CanvasLayer/ScrollContainer/VBoxContainer/Characters/HBoxContainer/Conquerer"]
+offset_left = -365.0
+offset_top = 82.0
+offset_right = -162.0
+offset_bottom = 141.0
+theme = SubResource("Theme_g8i7c")
+text = "Sir Baldwin the Stout
+"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Title" type="Label" parent="CanvasLayer"]
 offset_left = 494.0

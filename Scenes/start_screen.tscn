@@ -3050,10 +3050,10 @@ texture = ExtResource("2_mtlf8")
 [node name="Game name" type="Label" parent="TextureRect"]
 z_index = 10
 layout_mode = 0
-offset_left = 440.0
-offset_top = 249.0
-offset_right = 744.0
-offset_bottom = 336.0
+offset_left = 442.0
+offset_top = 250.0
+offset_right = 746.0
+offset_bottom = 355.0
 theme = SubResource("Theme_64bn7")
 text = "Crown and Axe
 "
