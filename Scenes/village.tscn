@@ -1,12 +1,15 @@
-[gd_scene load_steps=21 format=4 uid="uid://bco4ppe2377xg"]
+[gd_scene load_steps=26 format=4 uid="uid://bco4ppe2377xg"]
 
 [ext_resource type="Script" uid="uid://cyh04j2ldlbk3" path="res://Scripts/village.gd" id="1_lwl7v"]
 [ext_resource type="PackedScene" uid="uid://bfrf8jtdq1voq" path="res://Scenes/sign_post.tscn" id="4_yf0b0"]
 [ext_resource type="PackedScene" uid="uid://sqmx6a18v8ck" path="res://Scenes/tree.tscn" id="5_4ev5p"]
 [ext_resource type="Texture2D" uid="uid://bvgfywuu306dx" path="res://Assets/Characters/Blue Units/Monk/Idle.png" id="5_78u5i"]
 [ext_resource type="Texture2D" uid="uid://dxl5sjc0e1squ" path="res://Assets/Buildings/Red Buildings/Monastery.png" id="5_yf0b0"]
+[ext_resource type="Script" uid="uid://c2sob22xiwr5m" path="res://Scripts/buildings.gd" id="8_7en6d"]
 [ext_resource type="Script" uid="uid://ctqjsvqkm3m66" path="res://Scripts/trees.gd" id="8_lwl7v"]
+[ext_resource type="Script" uid="uid://b4bswokx5euyw" path="res://Scripts/sword_pickup.gd" id="9_lwl7v"]
 [ext_resource type="PackedScene" uid="uid://bf017do7gcmnm" path="res://Scenes/Pick-up.tscn" id="10_7en6d"]
+[ext_resource type="Texture2D" uid="uid://df6shkbkbax8p" path="res://Assets/UI Elements/UI Elements/Icons/Icon_05.png" id="10_d5xyy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ev5p"]
 atlas = ExtResource("5_78u5i")
@@ -374,6 +377,13 @@ physics_layer_0/collision_layer = 5
 physics_layer_0/collision_mask = 26
 sources/0 = SubResource("TileSetAtlasSource_yf0b0")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cibu2"]
+size = Vector2(48, 15.25)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8uog6"]
+radius = 14.0
+height = 44.0
+
 [node name="Village" type="Node2D"]
 script = ExtResource("1_lwl7v")
 
@@ -407,15 +417,31 @@ position = Vector2(-86.7864, 202.478)
 
 [node name="Buildings" type="TileMapLayer" parent="."]
 z_index = 5
+position = Vector2(1, -2)
 tile_map_data = PackedByteArray("AADa////AAABAAkAAADa/wAAAAABAAoAAADa/wEAAAABAAsAAADa/wIAAAABAAwAAADa/wMAAAABAA0AAADa/wQAAAABAA4AAADa/wUAAAABAA8AAADa/wYAAAABABAAAADa/wcAAAABABEAAADa/wgAAAABABIAAADb//7/AAACAAgAAADb////AAACAAkAAADb/wAAAAACAAoAAADb/wEAAAACAAsAAADb/wIAAAACAAwAAADb/wMAAAACAA0AAADb/wQAAAACAA4AAADb/wUAAAACAA8AAADb/wYAAAACABAAAADb/wcAAAACABEAAADb/wgAAAACABIAAADb/wkAAAACABMAAADc//z/AAADAAYAAADc//3/AAADAAcAAADc//7/AAADAAgAAADc////AAADAAkAAADc/wAAAAADAAoAAADc/wEAAAADAAsAAADc/wIAAAADAAwAAADc/wMAAAADAA0AAADc/wQAAAADAA4AAADc/wUAAAADAA8AAADc/wYAAAADABAAAADc/wcAAAADABEAAADc/wgAAAADABIAAADc/wkAAAADABMAAADd//v/AAAEAAUAAADd//z/AAAEAAYAAADd//3/AAAEAAcAAADd//7/AAAEAAgAAADd////AAAEAAkAAADd/wAAAAAEAAoAAADd/wEAAAAEAAsAAADd/wIAAAAEAAwAAADd/wMAAAAEAA0AAADd/wQAAAAEAA4AAADd/wUAAAAEAA8AAADd/wYAAAAEABAAAADd/wcAAAAEABEAAADd/wgAAAAEABIAAADd/wkAAAAEABMAAADe//j/AAAFAAIAAADe//n/AAAFAAMAAADe//r/AAAFAAQAAADe//v/AAAFAAUAAADe//z/AAAFAAYAAADe//3/AAAFAAcAAADe//7/AAAFAAgAAADe////AAAFAAkAAADe/wAAAAAFAAoAAADe/wEAAAAFAAsAAADe/wIAAAAFAAwAAADe/wMAAAAFAA0AAADe/wQAAAAFAA4AAADe/wUAAAAFAA8AAADe/wYAAAAFABAAAADe/wcAAAAFABEAAADe/wgAAAAFABIAAADe/wkAAAAFABMAAADf//j/AAAGAAIAAADf//n/AAAGAAMAAADf//r/AAAGAAQAAADf//v/AAAGAAUAAADf//z/AAAGAAYAAADf//3/AAAGAAcAAADf//7/AAAGAAgAAADf////AAAGAAkAAADf/wAAAAAGAAoAAADf/wEAAAAGAAsAAADf/wIAAAAGAAwAAADf/wMAAAAGAA0AAADf/wQAAAAGAA4AAADf/wUAAAAGAA8AAADf/wYAAAAGABAAAADf/wcAAAAGABEAAADf/wgAAAAGABIAAADf/wkAAAAGABMAAADg//v/AAAHAAUAAADg//z/AAAHAAYAAADg//3/AAAHAAcAAADg//7/AAAHAAgAAADg////AAAHAAkAAADg/wAAAAAHAAoAAADg/wEAAAAHAAsAAADg/wIAAAAHAAwAAADg/wMAAAAHAA0AAADg/wQAAAAHAA4AAADg/wUAAAAHAA8AAADg/wYAAAAHABAAAADg/wcAAAAHABEAAADg/wgAAAAHABIAAADg/wkAAAAHABMAAADh//z/AAAIAAYAAADh//3/AAAIAAcAAADh//7/AAAIAAgAAADh////AAAIAAkAAADh/wAAAAAIAAoAAADh/wEAAAAIAAsAAADh/wIAAAAIAAwAAADh/wMAAAAIAA0AAADh/wQAAAAIAA4AAADh/wUAAAAIAA8AAADh/wYAAAAIABAAAADh/wcAAAAIABEAAADh/wgAAAAIABIAAADh/wkAAAAIABMAAADi//7/AAAJAAgAAADi////AAAJAAkAAADi/wAAAAAJAAoAAADi/wEAAAAJAAsAAADi/wIAAAAJAAwAAADi/wMAAAAJAA0AAADi/wQAAAAJAA4AAADi/wUAAAAJAA8AAADi/wYAAAAJABAAAADi/wcAAAAJABEAAADi/wgAAAAJABIAAADi/wkAAAAJABMAAADj////AAAKAAkAAADj/wAAAAAKAAoAAADj/wEAAAAKAAsAAADj/wIAAAAKAAwAAADj/wMAAAAKAA0AAADj/wQAAAAKAA4AAADj/wUAAAAKAA8AAADj/wYAAAAKABAAAADj/wcAAAAKABEAAADj/wgAAAAKABIAAAA=")
 tile_set = SubResource("TileSet_hsw83")
 
-[node name="Sign_post" parent="Buildings" instance=ExtResource("4_yf0b0")]
-position = Vector2(-529, 126)
-message = "The land is the wealth. It shall provide you with life-sustaining necessities. Return only when you have collected enough."
-title = "The Village- a home for the wanderers"
+[node name="Monestry_door" type="Area2D" parent="Buildings"]
+position = Vector2(-527, 99)
+collision_layer = 5
+collision_mask = 2
+script = ExtResource("8_7en6d")
 
-[node name="CollisionShape2D" parent="Buildings/Sign_post" index="0"]
-position = Vector2(1, -1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buildings/Monestry_door"]
+position = Vector2(0, 44)
+shape = SubResource("RectangleShape2D_cibu2")
 
-[editable path="Buildings/Sign_post"]
+[node name="SwordPickup" type="Area2D" parent="Buildings/Monestry_door"]
+visible = false
+position = Vector2(63, 52)
+monitoring = false
+script = ExtResource("9_lwl7v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buildings/Monestry_door/SwordPickup"]
+position = Vector2(-63, 18)
+shape = SubResource("CapsuleShape2D_8uog6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Buildings/Monestry_door/SwordPickup"]
+position = Vector2(-58, 19)
+scale = Vector2(0.53125, 0.53125)
+texture = ExtResource("10_d5xyy")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://2dgpr3h3gndd"]
+[gd_scene load_steps=28 format=4 uid="uid://2dgpr3h3gndd"]
 
 [ext_resource type="Script" uid="uid://lo8gl70f1wja" path="res://Scripts/start_screen.gd" id="1_i8r30"]
 [ext_resource type="Texture2D" uid="uid://dj8ir0b6jm0x0" path="res://Assets/Terrain/Tileset/Water Background color.png" id="2_mtlf8"]
@@ -12,6 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://dxl5sjc0e1squ" path="res://Assets/Buildings/Red Buildings/Monastery.png" id="10_hppi5"]
 [ext_resource type="Texture2D" uid="uid://cf4fxvenq3ht4" path="res://Assets/UI Elements/UI Elements/Ribbons/SmallRibbons.png" id="11_64bn7"]
 [ext_resource type="Texture2D" uid="uid://bmmcqsrlf2uto" path="res://Assets/UI Elements/UI Elements/Ribbons/BigRibbons.png" id="12_357se"]
+
+[sub_resource type="Theme" id="Theme_64bn7"]
+default_font_size = 37
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_akot6"]
 texture = ExtResource("3_nqnrp")
@@ -3045,12 +3048,14 @@ offset_bottom = 654.0
 texture = ExtResource("2_mtlf8")
 
 [node name="Game name" type="Label" parent="TextureRect"]
+z_index = 10
 layout_mode = 0
-offset_left = 483.0
-offset_top = 241.0
-offset_right = 556.0
-offset_bottom = 290.0
-text = "My Game
+offset_left = 440.0
+offset_top = 249.0
+offset_right = 744.0
+offset_bottom = 336.0
+theme = SubResource("Theme_64bn7")
+text = "Crown and Axe
 "
 
 [node name="TileMapLayer" type="TileMapLayer" parent="TextureRect"]

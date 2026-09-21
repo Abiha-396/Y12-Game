@@ -35,6 +35,12 @@ enabled=PackedStringArray("res://addons/AS2P/plugin.cfg")
 player=""
 tree=""
 
+[gui]
+
+theme/custom_font="uid://blaib023584nd"
+theme/default_font_antialiasing=2
+theme/default_font_hinting=2
+
 [input]
 
 move_up={

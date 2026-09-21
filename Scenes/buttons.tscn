@@ -494,6 +494,9 @@ texture = ExtResource("4_5aik8")
 [node name="ProgressBar" type="ProgressBar" parent="Top-right"]
 layout_mode = 2
 
+[node name="Current_rank" type="Label" parent="Top-right"]
+layout_mode = 2
+
 [node name="Relics book" type="TextureButton" parent="."]
 layout_mode = 2
 offset_left = -58.0

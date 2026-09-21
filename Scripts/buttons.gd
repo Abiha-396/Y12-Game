@@ -1,12 +1,19 @@
 extends Control
 @onready var relics_menu=$"Relics book/TileMapLayer"
 @onready var progress_bar=$"Top-right/ProgressBar"
+@onready var rank_label=$"Top-right/Current_rank"
 
+ 
 
 
 func _ready() -> void:
 	relics_menu.hide()
 	GlobalScript.life
+	rank_label.text = "Current rank: Pawn"
+	GlobalScript.rank_changed.connect(_on_rank_changed)
+
+func _on_rank_changed(new_rank: String) -> void:
+	rank_label.text = ("Current rank: ")+ new_rank
 	
 	
 func _process(delta: float) -> void:
@@ -27,3 +34,4 @@ func _on_relics_book_pressed() -> void:
 
 func _on_close_pressed() -> void:
 	relics_menu.hide()
+	

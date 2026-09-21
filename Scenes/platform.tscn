@@ -5659,6 +5659,7 @@ tile_map_data = PackedByteArray("AACmAGsAAQAAAAAAAABjAGsAAQAAAAAAAAAhAD0AAQAAAAA
 tile_set = SubResource("TileSet_st0hs")
 
 [node name="Info_panel" type="CanvasLayer" parent="."]
+process_mode = 3
 script = ExtResource("14_lkdmu")
 
 [node name="Panel" type="TileMapLayer" parent="Info_panel"]
@@ -5682,6 +5683,13 @@ offset_right = 755.0
 offset_bottom = 273.0
 metadata/_edit_use_anchors_ = true
 
+[node name="SkipButton" type="Button" parent="Info_panel/Panel"]
+offset_left = 1024.0
+offset_top = 545.0
+offset_right = 1107.0
+offset_bottom = 579.0
+text = "Close"
+
 [node name="ColorRect" type="ColorRect" parent="Info_panel"]
 modulate = Color(1, 1, 1, 0)
 anchors_preset = -1
@@ -5699,5 +5707,7 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(-3114, -654)
 message = "Your Quest begins: the terrain is yours, go and conquer"
 title = "Welcome"
+
+[connection signal="pressed" from="Info_panel/Panel/SkipButton" to="Info_panel" method="_on_skip_button_pressed"]
 
 [editable path="Backgound"]

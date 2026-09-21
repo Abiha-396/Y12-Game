@@ -89,6 +89,9 @@ func animate() -> void:
 
 func _on_rank_changed(new_rank: String) -> void:
 	print("rank changed received: ", new_rank)
+	has_axe = false
+	anim_suffix = ""
+	is_swinging = false
 	match new_rank:
 		"Pawn":
 			current_rank = Rank.PAWN
@@ -104,5 +107,3 @@ func _on_rank_changed(new_rank: String) -> void:
 			animator.play(rank_prefix + "_idle" + anim_suffix)
 		State.RUN:
 			animator.play(rank_prefix + "_run" + anim_suffix)
-
-	

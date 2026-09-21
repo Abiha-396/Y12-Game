@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6wmigxwoghjh"]
+
+[ext_resource type="Texture2D" uid="uid://qp0ckqmxesea" path="res://Assets/UI Elements/UI Elements/Buttons/TinyRoundBlueButton.png" id="1_ibywg"]
+[ext_resource type="Texture2D" uid="uid://buu8r6uxg2le3" path="res://Assets/UI Elements/UI Elements/Buttons/TinyRoundRedButton.png" id="2_12ycv"]
+[ext_resource type="Texture2D" uid="uid://cvhnj7furcmc8" path="res://Assets/UI Elements/UI Elements/Icons/Icon_08.png" id="3_llnbm"]
+
+[node name="Home" type="TextureButton"]
+texture_normal = ExtResource("1_ibywg")
+texture_pressed = ExtResource("2_12ycv")
+
+[node name="Icon08" type="Sprite2D" parent="."]
+position = Vector2(31.5, 32.25)
+scale = Vector2(0.578125, 0.554688)
+texture = ExtResource("3_llnbm")

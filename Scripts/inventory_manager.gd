@@ -1,5 +1,5 @@
 extends Node
-var items: Dictionary = {} # item_name -> count
+var items: Dictionary = {}
 signal inventory_updated
 
 func _ready():
@@ -7,5 +7,4 @@ func _ready():
 
 func add_item(item_name: String, amount: int):
 	items[item_name] = items.get(item_name, 0) + amount
-	print("items now: ", items)
 	inventory_updated.emit()
