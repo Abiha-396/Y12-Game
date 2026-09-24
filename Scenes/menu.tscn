@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://nit5bhfduqxp"]
+[gd_scene load_steps=94 format=4 uid="uid://nit5bhfduqxp"]
 
 [ext_resource type="Texture2D" uid="uid://dj8ir0b6jm0x0" path="res://Assets/Terrain/Tileset/Water Background color.png" id="1_158mb"]
 [ext_resource type="Script" uid="uid://chilx64jtr4vn" path="res://Scripts/menu.gd" id="1_wwsa2"]
@@ -9,10 +9,17 @@
 [ext_resource type="Texture2D" uid="uid://cji87r7wi37nl" path="res://Assets/UI Elements/UI Elements/Human Avatars/Avatars_02.png" id="7_6swd7"]
 [ext_resource type="Texture2D" uid="uid://brgigh3w56v7b" path="res://Assets/UI Elements/UI Elements/Human Avatars/Avatars_01.png" id="8_7qvly"]
 [ext_resource type="Texture2D" uid="uid://c1igvu6mmpodr" path="res://Assets/Characters/Blue Units/Pawn/Pawn_Interact Axe.png" id="9_23t3j"]
+[ext_resource type="Theme" uid="uid://bm6dg5pwt70vd" path="res://Theme/little_titles.tres" id="9_d77ms"]
 [ext_resource type="Texture2D" uid="uid://dgdc16omgsxwr" path="res://Assets/Terrain/Resources/Wood/Trees/Tree1.png" id="10_8ph6h"]
 [ext_resource type="Texture2D" uid="uid://351gbp3gycf0" path="res://Assets/Terrain/Resources/Wood/Trees/Stump 1.png" id="11_5ti5v"]
 [ext_resource type="Texture2D" uid="uid://btu1bk8eu6aul" path="res://Assets/Terrain/Resources/Meat/Sheep/Sheep_Grass.png" id="12_1by5w"]
 [ext_resource type="Texture2D" uid="uid://bdnjhy5w7snll" path="res://Assets/Terrain/Resources/Meat/Meat Resource/Meat Resource.png" id="13_kmwmt"]
+[ext_resource type="Texture2D" uid="uid://bmq2244ugvmit" path="res://Assets/Characters/Blue Units/Lancer/Lancer_Idle.png" id="14_rc6uw"]
+[ext_resource type="Texture2D" uid="uid://bdlmn4w8j8r13" path="res://Assets/Characters/Blue Units/Lancer/Lancer_DownRight_Attack.png" id="15_dldpb"]
+[ext_resource type="Texture2D" uid="uid://dnoje0gk4u1bw" path="res://Assets/Characters/Blue Units/Lancer/Lancer_Right_Defence.png" id="16_d77ms"]
+[ext_resource type="Texture2D" uid="uid://cnweudhy8i6ec" path="res://Assets/Characters/Blue Units/Lancer/Lancer_UpRight_Defence.png" id="17_3p34a"]
+[ext_resource type="Texture2D" uid="uid://3q1mcpxdxctc" path="res://Assets/Characters/Blue Units/Lancer/Lancer_Up_Defence.png" id="18_owyel"]
+[ext_resource type="Texture2D" uid="uid://dxl5sjc0e1squ" path="res://Assets/Buildings/Red Buildings/Monastery.png" id="20_3p34a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q3rjx"]
 texture = ExtResource("2_wwsa2")
@@ -401,9 +408,6 @@ default_font_size = 20
 
 [sub_resource type="Theme" id="Theme_wwsa2"]
 default_font_size = 75
-
-[sub_resource type="Theme" id="Theme_rc6uw"]
-default_font_size = 25
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dldpb"]
 atlas = ExtResource("9_23t3j")
@@ -918,7 +922,244 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ocger"]
+atlas = ExtResource("14_rc6uw")
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0idt7"]
+atlas = ExtResource("14_rc6uw")
+region = Rect2(320, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymfbl"]
+atlas = ExtResource("14_rc6uw")
+region = Rect2(640, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfr1y"]
+atlas = ExtResource("14_rc6uw")
+region = Rect2(960, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f55ex"]
+atlas = ExtResource("14_rc6uw")
+region = Rect2(1280, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2t718"]
+atlas = ExtResource("14_rc6uw")
+region = Rect2(1600, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7gyr"]
+atlas = ExtResource("14_rc6uw")
+region = Rect2(1920, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2sctt"]
+atlas = ExtResource("14_rc6uw")
+region = Rect2(2240, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oc4uc"]
+atlas = ExtResource("14_rc6uw")
+region = Rect2(2560, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hph2t"]
+atlas = ExtResource("14_rc6uw")
+region = Rect2(2880, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmlsk"]
+atlas = ExtResource("14_rc6uw")
+region = Rect2(3200, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_je088"]
+atlas = ExtResource("14_rc6uw")
+region = Rect2(3520, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tyk3f"]
+atlas = ExtResource("15_dldpb")
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8nev"]
+atlas = ExtResource("15_dldpb")
+region = Rect2(320, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwrfa"]
+atlas = ExtResource("15_dldpb")
+region = Rect2(640, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvyb0"]
+atlas = ExtResource("16_d77ms")
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ke0sp"]
+atlas = ExtResource("16_d77ms")
+region = Rect2(320, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e26e0"]
+atlas = ExtResource("16_d77ms")
+region = Rect2(640, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i34d2"]
+atlas = ExtResource("16_d77ms")
+region = Rect2(960, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j22ke"]
+atlas = ExtResource("16_d77ms")
+region = Rect2(1280, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6016"]
+atlas = ExtResource("16_d77ms")
+region = Rect2(1600, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhf15"]
+atlas = ExtResource("17_3p34a")
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4tgj"]
+atlas = ExtResource("17_3p34a")
+region = Rect2(320, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4opq8"]
+atlas = ExtResource("17_3p34a")
+region = Rect2(640, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4jr8"]
+atlas = ExtResource("17_3p34a")
+region = Rect2(960, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdcr8"]
+atlas = ExtResource("17_3p34a")
+region = Rect2(1280, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tyuwu"]
+atlas = ExtResource("17_3p34a")
+region = Rect2(1600, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgmi4"]
+atlas = ExtResource("18_owyel")
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jy4m6"]
+atlas = ExtResource("18_owyel")
+region = Rect2(320, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5oyky"]
+atlas = ExtResource("18_owyel")
+region = Rect2(640, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_funoy"]
+atlas = ExtResource("18_owyel")
+region = Rect2(960, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11ugi"]
+atlas = ExtResource("18_owyel")
+region = Rect2(1280, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tl8uh"]
+atlas = ExtResource("18_owyel")
+region = Rect2(1600, 0, 320, 320)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_23t3j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ocger")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0idt7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ymfbl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gfr1y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f55ex")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2t718")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7gyr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2sctt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oc4uc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hph2t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmlsk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_je088")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tyk3f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m8nev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fwrfa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvyb0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ke0sp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e26e0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i34d2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j22ke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6016")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhf15")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4tgj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4opq8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4jr8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sdcr8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tyuwu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgmi4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jy4m6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5oyky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_funoy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11ugi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tl8uh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Menu" type="Control"]
 z_index = 8
@@ -948,7 +1189,7 @@ tile_set = SubResource("TileSet_rfqti")
 offset_left = 48.0
 offset_top = 184.0
 offset_right = 1117.0
-offset_bottom = 1312.0
+offset_bottom = 1546.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ScrollContainer"]
 layout_mode = 2
@@ -1035,7 +1276,7 @@ offset_left = 47.0
 offset_top = 555.0
 offset_right = 305.0
 offset_bottom = 574.0
-theme = SubResource("Theme_rc6uw")
+theme = ExtResource("9_d77ms")
 text = "Quests"
 
 [node name="Player" type="AnimatedSprite2D" parent="CanvasLayer/Quests"]
@@ -1045,12 +1286,41 @@ sprite_frames = SubResource("SpriteFrames_ocger")
 autoplay = "default"
 frame_progress = 0.765368
 
+[node name="Label2" type="Label" parent="CanvasLayer/Quests/Player"]
+offset_left = 239.0
+offset_top = 65.0
+offset_right = 490.0
+offset_bottom = 251.0
+theme = SubResource("Theme_g8i7c")
+text = "Meat
+
+Take a swing at the sheep using Space bar. You might need to chase the sheep with an axe
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
 [node name="Player2" type="AnimatedSprite2D" parent="CanvasLayer/Quests"]
 z_index = 1
 position = Vector2(542, 175)
 sprite_frames = SubResource("SpriteFrames_ocger")
 autoplay = "default"
 frame_progress = 0.0980277
+
+[node name="Label3" type="Label" parent="CanvasLayer/Quests/Player2"]
+offset_left = -505.0
+offset_top = 93.0
+offset_right = -279.0
+offset_bottom = 333.0
+theme = SubResource("Theme_g8i7c")
+text = "Chopping wood:
+
+Press Space to take a hit at the tree. After 3 hits, the tree would fall and the wood will be yours to collect.
+
+*You would need an axe"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Tree" type="AnimatedSprite2D" parent="CanvasLayer/Quests"]
 position = Vector2(227, 109)
@@ -1063,5 +1333,48 @@ position = Vector2(598, 198)
 sprite_frames = SubResource("SpriteFrames_ymfbl")
 autoplay = "default"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Quests"]
+[node name="Knight" type="AnimatedSprite2D" parent="CanvasLayer/Quests"]
+position = Vector2(832, 168)
 sprite_frames = SubResource("SpriteFrames_23t3j")
+frame_progress = 0.0269158
+
+[node name="Label4" type="Label" parent="CanvasLayer/Quests/Knight"]
+offset_left = -77.0
+offset_top = 58.0
+offset_right = 224.0
+offset_bottom = 263.0
+theme = SubResource("Theme_g8i7c")
+text = "The final quest
+
+Harness the powers of years of training to fight the final beast and conquer the castle.
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Help" type="Label" parent="CanvasLayer"]
+offset_left = 87.0
+offset_top = 1114.0
+offset_right = 712.0
+offset_bottom = 1316.0
+theme = ExtResource("9_d77ms")
+text = "
+
+Help:
+
+To access help, go to the monestry. You may find these buildings spread out."
+autowrap_mode = 2
+
+[node name="Monastery" type="Sprite2D" parent="CanvasLayer/Help"]
+position = Vector2(776, 102)
+texture = ExtResource("20_3p34a")
+
+[node name="Credits" type="Label" parent="CanvasLayer"]
+offset_left = 97.0
+offset_top = 1389.0
+offset_right = 268.0
+offset_bottom = 1456.0
+theme = ExtResource("9_d77ms")
+text = "Credits
+
+Tiny swords: link"
