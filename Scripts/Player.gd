@@ -28,6 +28,9 @@ func _ready():
 	GlobalScript.axe_picked_up.connect(_on_axe_picked_up)
 	
 
+
+	
+
 func _physics_process(delta):
 	move(delta)
 	if not is_swinging:
@@ -42,11 +45,10 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		is_swinging = false
 
 func swing_axe():
-	print("trees found: ", get_tree().get_nodes_in_group("tree"))
-	for tree in get_tree().get_nodes_in_group("tree"):
-		print("distance: ", global_position.distance_to(tree.global_position))
-		if global_position.distance_to(tree.global_position) < 100:
-			tree.take_hit()
+	var targets = get_tree().get_nodes_in_group("tree") + get_tree().get_nodes_in_group("sheep")
+	for target in targets:
+		if global_position.distance_to(target.global_position) < 100:
+			target.take_hit()
 	
 
 

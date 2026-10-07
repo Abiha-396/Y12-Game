@@ -547,11 +547,12 @@ height = 68.0
 
 [node name="Tree" type="Node2D" groups=["tree"]]
 script = ExtResource("1_0vwjc")
+hits_required = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_rsuno")
-animation = &"stump1"
-autoplay = "tree1"
+animation = &"tree1"
+frame_progress = 0.466755
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
 root_node = NodePath("../..")

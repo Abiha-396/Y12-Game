@@ -13,5 +13,4 @@ func _on_body_entered(body: Node2D) -> void:
 		GlobalScript.intro_requested.emit(title, message)
 		
 		
-
 		can_trigger = true

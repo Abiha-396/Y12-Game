@@ -7,7 +7,7 @@
 radius = 13.5155
 height = 27.031
 
-[node name="Tool" type="Sprite2D"]
+[node name="Tool" type="Sprite2D" groups=["weapon"]]
 scale = Vector2(1.50464, 1.62217)
 texture = ExtResource("1_3j0mo")
 script = ExtResource("2_jleex")

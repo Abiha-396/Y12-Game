@@ -1,12 +1,18 @@
 extends CharacterBody2D
+
 @onready var animation_player = $AnimatedSprite2D
-const speed = 40
+@onready var death_player: AnimationPlayer = $AnimatedSprite2D/AnimationPlayer
+
+const speed = 70
+const safe_distance = 200
+
 var runaway_direction: Vector2 = Vector2.ZERO
 var is_running: bool = false
 var is_dying: bool = false
-const safe_distance = 200
 var player_ref: Node2D = null
 
+func _ready() -> void:
+	add_to_group("sheep")
 
 func _physics_process(delta):
 	if is_dying:
@@ -33,23 +39,23 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Player" or body.is_in_group("player"):
 		player_ref = body
 		is_running = true
-		var player_pos = body.global_position
-		runaway_direction = global_position.direction_to(player_pos) * -1
+		runaway_direction = global_position.direction_to(body.global_position) * -1
 
-func _on_catch_area_body_entered(body: Node2D) -> void:
-	if body.name == "Player" or body.is_in_group("player") and not is_dying:
-		is_dying = true
-		is_running = false
-		velocity = Vector2.ZERO
-		$AnimatedSprite2D/AnimationPlayer.play("death")
-		await animation_player.animation_finished
-		_turn_into_meat()
-		queue_free()
-		
+func take_hit() -> void:
+	_die()
+
+func _die() -> void:
+	if is_dying:
+		return
+	is_dying = true
+	is_running = false
+	velocity = Vector2.ZERO
+	death_player.play("death")
+	await death_player.animation_finished
+	_turn_into_meat()
+	queue_free()
 
 func _turn_into_meat() -> void:
 	var meat = preload("res://Scenes/meat.tscn").instantiate()
+	get_tree().current_scene.add_child(meat)
 	meat.global_position = global_position
-	get_tree().current_scene.add_child(meat) 
-
-	

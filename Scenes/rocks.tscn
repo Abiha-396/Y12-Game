@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cjfvjrfyo3upd"]
+[gd_scene load_steps=41 format=3 uid="uid://cjfvjrfyo3upd"]
 
 [ext_resource type="Script" uid="uid://bwpcpx361rffp" path="res://Scripts/Spare.gd" id="1_kh65r"]
 [ext_resource type="Texture2D" uid="uid://cn4dsduqhjh7i" path="res://Assets/Particle FX/Fire_02.png" id="2_bnx0d"]
@@ -158,8 +158,8 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_uwjdl")
 }],
-"loop": true,
-"name": &"large",
+"loop": false,
+"name": &"fire1",
 "speed": 7.0
 }, {
 "frames": [{
@@ -199,8 +199,8 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_215qr")
 }],
-"loop": true,
-"name": &"mid",
+"loop": false,
+"name": &"fire2",
 "speed": 7.0
 }, {
 "frames": [{
@@ -228,13 +228,101 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qc8vg")
 }],
-"loop": true,
-"name": &"small",
+"loop": false,
+"name": &"fire3",
 "speed": 7.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bnx0d"]
 radius = 32.5576
+
+[sub_resource type="Animation" id="Animation_bnx0d"]
+length = 1.42857
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.142857, 0.285714, 0.428571, 0.571429, 0.714286, 0.857143, 1, 1.14286, 1.28571),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["fire1"]
+}
+
+[sub_resource type="Animation" id="Animation_o33tv"]
+length = 1.71429
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.142857, 0.285714, 0.428571, 0.571429, 0.714286, 0.857143, 1, 1.14286, 1.28571, 1.42857, 1.57143),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["fire2"]
+}
+
+[sub_resource type="Animation" id="Animation_nhrg8"]
+length = 1.14286
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.142857, 0.285714, 0.428571, 0.571429, 0.714286, 0.857143, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["fire3"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4eis1"]
+_data = {
+&"fire1": SubResource("Animation_bnx0d"),
+&"fire2": SubResource("Animation_o33tv"),
+&"fire3": SubResource("Animation_nhrg8")
+}
 
 [node name="Rocks" type="Node2D"]
 script = ExtResource("1_kh65r")
@@ -243,13 +331,18 @@ script = ExtResource("1_kh65r")
 position = Vector2(161, 91)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_dv8mu")
-animation = &"small"
+animation = &"fire1"
 
 [node name="Area2D" type="Area2D" parent="Rock"]
 collision_mask = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rock/Area2D"]
 shape = SubResource("CircleShape2D_bnx0d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Rock"]
+libraries = {
+&"": SubResource("AnimationLibrary_4eis1")
+}
 
 [connection signal="area_entered" from="Rock/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Rock/Area2D" to="." method="_on_area_2d_body_entered"]

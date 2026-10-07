@@ -10,6 +10,7 @@ signal intro_requested(title: String, body: String)
 signal army_unit_recruited(unit_type: String)
 signal axe_picked_up
 signal intro_closed
+signal axe_swung(pos: Vector2)
 
 
 func _process(delta: float) -> void:

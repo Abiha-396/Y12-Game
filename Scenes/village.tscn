@@ -413,6 +413,64 @@ position = Vector2(-337.635, 413.985)
 [node name="Tree" parent="Wood_cutting/Trees" instance=ExtResource("5_4ev5p")]
 position = Vector2(-86.7864, 202.478)
 
+[node name="Tree6" parent="Wood_cutting/Trees" instance=ExtResource("5_4ev5p")]
+position = Vector2(658.625, 52.8765)
+
+[node name="Tree9" parent="Wood_cutting/Trees" instance=ExtResource("5_4ev5p")]
+position = Vector2(597.994, 273.41)
+
+[node name="Tree10" parent="Wood_cutting/Trees" instance=ExtResource("5_4ev5p")]
+position = Vector2(41.6099, 362.398)
+
+[node name="Tree12" parent="Wood_cutting/Trees" instance=ExtResource("5_4ev5p")]
+position = Vector2(-80.8421, -143.154)
+
+[node name="Tree13" parent="Wood_cutting/Trees" instance=ExtResource("5_4ev5p")]
+position = Vector2(727.579, -327.577)
+
+[node name="Tree14" parent="Wood_cutting/Trees" instance=ExtResource("5_4ev5p")]
+position = Vector2(407.777, -412.695)
+
+[node name="Tree15" parent="Wood_cutting/Trees" instance=ExtResource("5_4ev5p")]
+position = Vector2(89.1641, -419.143)
+
+[node name="Tree16" parent="Wood_cutting/Trees" instance=ExtResource("5_4ev5p")]
+position = Vector2(1140.11, -462.992)
+
+[node name="Tree17" parent="Wood_cutting/Trees" instance=ExtResource("5_4ev5p")]
+position = Vector2(1088.99, -6.44836)
+
+[node name="Tree18" parent="Wood_cutting/Trees" instance=ExtResource("5_4ev5p")]
+position = Vector2(918.984, 212.796)
+
+[node name="Tree19" parent="Wood_cutting/Trees" instance=ExtResource("5_4ev5p")]
+position = Vector2(628.904, -550.69)
+
+[node name="Tree11" parent="Wood_cutting/Trees" instance=ExtResource("5_4ev5p")]
+position = Vector2(381.622, -131.547)
+
+[node name="Tree7" parent="Wood_cutting/Trees" instance=ExtResource("5_4ev5p")]
+position = Vector2(494.563, 123.808)
+
+[node name="Tree8" parent="Wood_cutting/Trees" instance=ExtResource("5_4ev5p")]
+position = Vector2(228.26, 51.5869)
+
+[node name="Tree2" parent="Wood_cutting/Trees" instance=ExtResource("5_4ev5p")]
+position = Vector2(257.981, 229.562)
+
+[node name="Tree5" parent="Wood_cutting/Trees" instance=ExtResource("5_4ev5p")]
+position = Vector2(374.489, 274.7)
+
+[node name="Tree3" parent="Wood_cutting/Trees" instance=ExtResource("5_4ev5p")]
+position = Vector2(142.663, 194.74)
+
+[node name="Tree4" parent="Wood_cutting/Trees" instance=ExtResource("5_4ev5p")]
+position = Vector2(33.2879, 130.257)
+
+[node name="Sign_post2" parent="Wood_cutting" instance=ExtResource("4_yf0b0")]
+position = Vector2(827, 302)
+title = "Hi"
+
 [node name="Sign_post" parent="Wood_cutting" instance=ExtResource("4_yf0b0")]
 
 [node name="Buildings" type="TileMapLayer" parent="."]
