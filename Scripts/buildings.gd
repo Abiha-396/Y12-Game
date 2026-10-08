@@ -17,6 +17,8 @@ func _on_body_entered(body: Node) -> void:
 		await GlobalScript.intro_closed
 		sword.show()
 		sword.set_deferred("monitoring", true)
+	
+		
 	elif not briefed:
 		briefed = true
 		GlobalScript.intro_requested.emit("The Monastery", "Bring me a log and 3 pieces of meat, and I will reward you.")

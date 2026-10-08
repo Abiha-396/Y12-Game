@@ -1,7 +1,8 @@
-[gd_scene load_steps=28 format=4 uid="uid://2dgpr3h3gndd"]
+[gd_scene load_steps=29 format=4 uid="uid://2dgpr3h3gndd"]
 
 [ext_resource type="Script" uid="uid://lo8gl70f1wja" path="res://Scripts/start_screen.gd" id="1_i8r30"]
 [ext_resource type="Texture2D" uid="uid://dj8ir0b6jm0x0" path="res://Assets/Terrain/Tileset/Water Background color.png" id="2_mtlf8"]
+[ext_resource type="Theme" uid="uid://butpyfggp1ar" path="res://Scenes/top_label.tres" id="3_hppi5"]
 [ext_resource type="Texture2D" uid="uid://cquss5bh0ch5f" path="res://Assets/Terrain/Decorations/Clouds/Clouds_01.png" id="3_nqnrp"]
 [ext_resource type="Texture2D" uid="uid://cbyrkybceyluu" path="res://Assets/Terrain/Decorations/Clouds/Clouds_02.png" id="4_5a7ho"]
 [ext_resource type="Texture2D" uid="uid://ph4d4y3gr0vt" path="res://Assets/Buildings/Red Buildings/Castle.png" id="5_rjuq2"]
@@ -12,9 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dxl5sjc0e1squ" path="res://Assets/Buildings/Red Buildings/Monastery.png" id="10_hppi5"]
 [ext_resource type="Texture2D" uid="uid://cf4fxvenq3ht4" path="res://Assets/UI Elements/UI Elements/Ribbons/SmallRibbons.png" id="11_64bn7"]
 [ext_resource type="Texture2D" uid="uid://bmmcqsrlf2uto" path="res://Assets/UI Elements/UI Elements/Ribbons/BigRibbons.png" id="12_357se"]
-
-[sub_resource type="Theme" id="Theme_64bn7"]
-default_font_size = 37
+[ext_resource type="Theme" uid="uid://btwix384kuni8" path="res://Scenes/signpost_label.tres" id="14_poqtw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_akot6"]
 texture = ExtResource("3_nqnrp")
@@ -3054,7 +3053,7 @@ offset_left = 442.0
 offset_top = 250.0
 offset_right = 746.0
 offset_bottom = 355.0
-theme = SubResource("Theme_64bn7")
+theme = ExtResource("3_hppi5")
 text = "Crown and Axe
 "
 
@@ -3068,23 +3067,26 @@ tile_set = SubResource("TileSet_7c08c")
 
 [node name="Buttons" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 459.0
-offset_top = 363.0
-offset_right = 695.0
-offset_bottom = 464.0
+offset_left = 466.0
+offset_top = 350.0
+offset_right = 701.0
+offset_bottom = 481.0
 
 [node name="Start" type="Button" parent="Buttons"]
 layout_mode = 2
+theme = ExtResource("14_poqtw")
 text = "Start
 "
 
 [node name="Menu" type="Button" parent="Buttons"]
 layout_mode = 2
+theme = ExtResource("14_poqtw")
 text = "Menu
 "
 
 [node name="Quit" type="Button" parent="Buttons"]
 layout_mode = 2
+theme = ExtResource("14_poqtw")
 text = "Quit"
 
 [connection signal="pressed" from="Buttons/Start" to="." method="_on_start_pressed"]

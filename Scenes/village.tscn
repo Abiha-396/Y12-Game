@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://bco4ppe2377xg"]
+[gd_scene load_steps=24 format=4 uid="uid://bco4ppe2377xg"]
 
 [ext_resource type="Script" uid="uid://cyh04j2ldlbk3" path="res://Scripts/village.gd" id="1_lwl7v"]
 [ext_resource type="PackedScene" uid="uid://bfrf8jtdq1voq" path="res://Scenes/sign_post.tscn" id="4_yf0b0"]
@@ -7,9 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://dxl5sjc0e1squ" path="res://Assets/Buildings/Red Buildings/Monastery.png" id="5_yf0b0"]
 [ext_resource type="Script" uid="uid://c2sob22xiwr5m" path="res://Scripts/buildings.gd" id="8_7en6d"]
 [ext_resource type="Script" uid="uid://ctqjsvqkm3m66" path="res://Scripts/trees.gd" id="8_lwl7v"]
-[ext_resource type="Script" uid="uid://b4bswokx5euyw" path="res://Scripts/sword_pickup.gd" id="9_lwl7v"]
+[ext_resource type="PackedScene" uid="uid://drleyurb7iiyy" path="res://Scenes/sword_pickup.tscn" id="9_hsw83"]
 [ext_resource type="PackedScene" uid="uid://bf017do7gcmnm" path="res://Scenes/Pick-up.tscn" id="10_7en6d"]
-[ext_resource type="Texture2D" uid="uid://df6shkbkbax8p" path="res://Assets/UI Elements/UI Elements/Icons/Icon_05.png" id="10_d5xyy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ev5p"]
 atlas = ExtResource("5_78u5i")
@@ -380,10 +379,6 @@ sources/0 = SubResource("TileSetAtlasSource_yf0b0")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cibu2"]
 size = Vector2(48, 15.25)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8uog6"]
-radius = 14.0
-height = 44.0
-
 [node name="Village" type="Node2D"]
 script = ExtResource("1_lwl7v")
 
@@ -408,7 +403,7 @@ scale = Vector2(0.841146, 0.775391)
 script = ExtResource("8_lwl7v")
 
 [node name="Tool02" parent="Wood_cutting/Trees" instance=ExtResource("10_7en6d")]
-position = Vector2(-337.635, 413.985)
+position = Vector2(-305.536, 415.274)
 
 [node name="Tree" parent="Wood_cutting/Trees" instance=ExtResource("5_4ev5p")]
 position = Vector2(-86.7864, 202.478)
@@ -469,9 +464,8 @@ position = Vector2(33.2879, 130.257)
 
 [node name="Sign_post2" parent="Wood_cutting" instance=ExtResource("4_yf0b0")]
 position = Vector2(827, 302)
-title = "Hi"
-
-[node name="Sign_post" parent="Wood_cutting" instance=ExtResource("4_yf0b0")]
+message = "Press Space bar to take a swing. The journey is long, keep a-hold of it!"
+title = "Collect wood"
 
 [node name="Buildings" type="TileMapLayer" parent="."]
 z_index = 5
@@ -489,17 +483,5 @@ script = ExtResource("8_7en6d")
 position = Vector2(0, 44)
 shape = SubResource("RectangleShape2D_cibu2")
 
-[node name="SwordPickup" type="Area2D" parent="Buildings/Monestry_door"]
-visible = false
+[node name="SwordPickup" parent="Buildings/Monestry_door" instance=ExtResource("9_hsw83")]
 position = Vector2(63, 52)
-monitoring = false
-script = ExtResource("9_lwl7v")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Buildings/Monestry_door/SwordPickup"]
-position = Vector2(-63, 18)
-shape = SubResource("CapsuleShape2D_8uog6")
-
-[node name="Sprite2D" type="Sprite2D" parent="Buildings/Monestry_door/SwordPickup"]
-position = Vector2(-58, 19)
-scale = Vector2(0.53125, 0.53125)
-texture = ExtResource("10_d5xyy")

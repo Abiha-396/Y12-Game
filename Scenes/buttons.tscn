@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://cso64kjej10fb"]
+[gd_scene load_steps=17 format=4 uid="uid://cso64kjej10fb"]
 
 [ext_resource type="Texture2D" uid="uid://qp0ckqmxesea" path="res://Assets/UI Elements/UI Elements/Buttons/TinyRoundBlueButton.png" id="1_dc2ao"]
 [ext_resource type="Script" uid="uid://c5k22wwjq3pbr" path="res://Scripts/buttons.gd" id="1_r3kxo"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://j2a24btuvr0m" path="res://Assets/UI Elements/UI Elements/Banners/Banner_Slots.png" id="10_y5w6w"]
 [ext_resource type="Texture2D" uid="uid://58lb62305kg1" path="res://Assets/UI Elements/UI Elements/Banners/Banner.png" id="11_ljimj"]
 [ext_resource type="PackedScene" uid="uid://bb2lsw13dhujn" path="res://Scenes/inventory.tscn" id="12_ljimj"]
+[ext_resource type="Theme" uid="uid://bm6dg5pwt70vd" path="res://Theme/little_titles.tres" id="13_b2qy2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b2qy2"]
 texture = ExtResource("10_y5w6w")
@@ -530,6 +531,16 @@ offset_left = 17.0
 offset_top = 235.0
 offset_right = 353.0
 offset_bottom = 367.0
+
+[node name="curret_objective" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.065
+offset_left = 432.0
+offset_top = -39.0
+offset_right = 580.315
+offset_bottom = -2.0
+theme = ExtResource("13_b2qy2")
 
 [connection signal="pressed" from="Top-right/HBoxContainer/Home" to="." method="_on_home_pressed"]
 [connection signal="pressed" from="Top-right/HBoxContainer/Quit" to="." method="_on_quit_pressed"]

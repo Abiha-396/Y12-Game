@@ -1,8 +1,10 @@
-[gd_scene load_steps=192 format=3 uid="uid://bfhx6iq054kbp"]
+[gd_scene load_steps=208 format=3 uid="uid://bfhx6iq054kbp"]
 
 [ext_resource type="Script" uid="uid://qnypwr65sxq3" path="res://Scripts/Player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://bmq2244ugvmit" path="res://Assets/Characters/Blue Units/Lancer/Lancer_Idle.png" id="1_v0iea"]
+[ext_resource type="Texture2D" uid="uid://mvy6j1qhqdcd" path="res://Assets/Characters/Blue Units/Warrior/Warrior_Idle.png" id="2_bi64h"]
 [ext_resource type="Texture2D" uid="uid://c80t58d6fe0vx" path="res://Assets/Characters/Blue Units/Lancer/Lancer_Down_Attack.png" id="2_olqyp"]
+[ext_resource type="Texture2D" uid="uid://mc6mifd7gxcr" path="res://Assets/Characters/Blue Units/Warrior/Warrior_Run.png" id="3_2ijsl"]
 [ext_resource type="Texture2D" uid="uid://omf3r2mxk6an" path="res://Assets/Characters/Blue Units/Lancer/Lancer_Down_Defence.png" id="3_wpjfl"]
 [ext_resource type="Texture2D" uid="uid://uuxt4n88w75d" path="res://Assets/Characters/Blue Units/Lancer/Lancer_Right_Attack.png" id="5_bi64h"]
 [ext_resource type="Texture2D" uid="uid://d00w51h7ywqyr" path="res://Assets/Characters/Blue Units/Lancer/Lancer_Run.png" id="5_fkybt"]
@@ -25,6 +27,62 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f60y1"]
 radius = 6.0
 height = 36.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36dho"]
+atlas = ExtResource("2_bi64h")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yh6i2"]
+atlas = ExtResource("2_bi64h")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nv4vc"]
+atlas = ExtResource("2_bi64h")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gxox"]
+atlas = ExtResource("2_bi64h")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11gg7"]
+atlas = ExtResource("2_bi64h")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpa8y"]
+atlas = ExtResource("2_bi64h")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7anab"]
+atlas = ExtResource("2_bi64h")
+region = Rect2(1152, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7v0o"]
+atlas = ExtResource("2_bi64h")
+region = Rect2(1344, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gc6xv"]
+atlas = ExtResource("3_2ijsl")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_473p5"]
+atlas = ExtResource("3_2ijsl")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yj2ec"]
+atlas = ExtResource("3_2ijsl")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1mwt"]
+atlas = ExtResource("3_2ijsl")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rvty"]
+atlas = ExtResource("3_2ijsl")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npbv3"]
+atlas = ExtResource("3_2ijsl")
+region = Rect2(960, 0, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sbwqj"]
 atlas = ExtResource("2_olqyp")
@@ -528,6 +586,58 @@ region = Rect2(960, 0, 192, 192)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v0iea"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36dho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yh6i2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nv4vc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8gxox")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11gg7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qpa8y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7anab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7v0o")
+}],
+"loop": true,
+"name": &"king_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gc6xv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_473p5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yj2ec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1mwt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7rvty")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npbv3")
+}],
+"loop": true,
+"name": &"king_run",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_sbwqj")
@@ -1698,7 +1808,7 @@ height = 68.0
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 z_index = 10
 collision_layer = 2
-collision_mask = 41
+collision_mask = 61
 script = ExtResource("1_cvnsp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -1707,10 +1817,8 @@ shape = SubResource("CapsuleShape2D_f60y1")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_v0iea")
-animation = &"lancer_down_defence"
+animation = &"king_run"
 autoplay = "pawn_idle"
-frame = 2
-frame_progress = 0.173314
 flip_h = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]

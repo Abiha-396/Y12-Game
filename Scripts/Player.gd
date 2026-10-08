@@ -15,6 +15,7 @@ var current_tree = null
 @onready var animator = $AnimatedSprite2D/AnimationPlayer
 @onready var sprite = $AnimatedSprite2D
 @onready var axe_range=$Axe_range
+@onready var base_scale: Vector2 = sprite.scale
 var has_axe: bool = false
 var anim_suffix: String = ""
 var is_swinging: bool = false
@@ -24,7 +25,7 @@ var is_swinging: bool = false
 
 func _ready():
 	print("Player ready")
-	GlobalScript.rank_changed.connect(_on_rank_changed)
+	GlobalScript.rank_changed.connect(_play_transition)
 	GlobalScript.axe_picked_up.connect(_on_axe_picked_up)
 	
 
@@ -109,3 +110,15 @@ func _on_rank_changed(new_rank: String) -> void:
 			animator.play(rank_prefix + "_idle" + anim_suffix)
 		State.RUN:
 			animator.play(rank_prefix + "_run" + anim_suffix)
+			
+			
+func _play_transition(new_rank: String) -> void:
+	set_physics_process(false)
+	velocity = Vector2.ZERO
+	var tw := create_tween()
+	tw.tween_property(sprite, "modulate", Color(3, 3, 3), 0.4)
+	tw.tween_callback(_on_rank_changed.bind(new_rank))
+	tw.tween_property(sprite, "scale", base_scale * 1.4, 0.15)
+	tw.tween_property(sprite, "scale", base_scale, 0.15)
+	tw.parallel().tween_property(sprite, "modulate", Color.WHITE, 0.3)
+	tw.tween_callback(set_physics_process.bind(true))
