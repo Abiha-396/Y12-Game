@@ -1,0 +1,32 @@
+[gd_scene load_steps=8 format=3 uid="uid://l6uf7eap3ef1"]
+
+[ext_resource type="Script" uid="uid://cv6pd3chh2prv" path="res://Scripts/audio_manager.gd" id="1_5kf6k"]
+[ext_resource type="AudioStream" uid="uid://cqdvsfm4l8v0x" path="res://Assets/Sounds/background.mp3" id="1_mjqhu"]
+[ext_resource type="AudioStream" uid="uid://oiwuteffecg2" path="res://Assets/Sounds/battle.mp3" id="2_5kf6k"]
+[ext_resource type="AudioStream" uid="uid://c07p358p0ie7i" path="res://Assets/Sounds/win.mp3" id="3_tnn7g"]
+[ext_resource type="AudioStream" uid="uid://cxhwng8au7l5e" path="res://Assets/Sounds/lose.mp3" id="4_lwpe1"]
+[ext_resource type="AudioStream" uid="uid://5bv6cabyriif" path="res://Assets/Sounds/run.mp3" id="5_jmilc"]
+[ext_resource type="AudioStream" uid="uid://bqal8q8sg3ajr" path="res://Assets/Sounds/swing.mp3" id="6_5nrbi"]
+
+[node name="AudioManager" type="Node2D"]
+script = ExtResource("1_5kf6k")
+
+[node name="Background" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_mjqhu")
+volume_db = -10.0
+
+[node name="Battle" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_5kf6k")
+
+[node name="Win" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_tnn7g")
+
+[node name="Lose" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_lwpe1")
+
+[node name="Run" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_jmilc")
+volume_db = -10.0
+
+[node name="Swing" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_5nrbi")

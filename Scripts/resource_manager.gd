@@ -1,6 +1,6 @@
 extends Node2D
 var resources = { "log": 0, "ore": 0, "meat": 0 }
-var thresholds = { "log": 1, "ore": 0, "meat": 0 }
+var thresholds = { "log": 0, "ore": 0, "meat": 0 }
 var wood_goal_reached: bool = false
 var rank_up_sent: bool = false
 var player: Node = null

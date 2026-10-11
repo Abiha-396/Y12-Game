@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://cso64kjej10fb"]
+[gd_scene load_steps=18 format=4 uid="uid://cso64kjej10fb"]
 
 [ext_resource type="Texture2D" uid="uid://qp0ckqmxesea" path="res://Assets/UI Elements/UI Elements/Buttons/TinyRoundBlueButton.png" id="1_dc2ao"]
 [ext_resource type="Script" uid="uid://c5k22wwjq3pbr" path="res://Scripts/buttons.gd" id="1_r3kxo"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dtbmour4t6idj" path="res://Assets/UI Elements/UI Elements/Icons/Icon_12.png" id="4_5aik8"]
 [ext_resource type="Texture2D" uid="uid://cvhnj7furcmc8" path="res://Assets/UI Elements/UI Elements/Icons/Icon_08.png" id="5_2y0rg"]
 [ext_resource type="Texture2D" uid="uid://c01qsrodq6x66" path="res://Assets/UI Elements/UI Elements/Buttons/SmallBlueSquareButton_Regular.png" id="6_2hqns"]
+[ext_resource type="Script" uid="uid://bgyrths7tpon" path="res://Scripts/progress_bar.gd" id="7_gf7if"]
 [ext_resource type="Texture2D" uid="uid://cp6cvtjbfj4t8" path="res://Assets/UI Elements/UI Elements/Buttons/SmallRedSquareButton_Regular.png" id="7_r3kxo"]
 [ext_resource type="Texture2D" uid="uid://bhdjjhg7wuj8d" path="res://Assets/UI Elements/UI Elements/Icons/Icon_06.png" id="9_ljimj"]
 [ext_resource type="Texture2D" uid="uid://j2a24btuvr0m" path="res://Assets/UI Elements/UI Elements/Banners/Banner_Slots.png" id="10_y5w6w"]
@@ -494,6 +495,9 @@ texture = ExtResource("4_5aik8")
 
 [node name="ProgressBar" type="ProgressBar" parent="Top-right"]
 layout_mode = 2
+max_value = 12.0
+value = 12.0
+script = ExtResource("7_gf7if")
 
 [node name="Current_rank" type="Label" parent="Top-right"]
 layout_mode = 2

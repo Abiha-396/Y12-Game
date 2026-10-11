@@ -1,15 +1,14 @@
 extends Control
-@onready var label=$Label
+@onready var label = $Label
 
-func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/start_screen.tscn")
-
-
-func _ready() -> void:
-	GlobalScript.life
-	
-func _process(delta: float) -> void:
-	if GlobalScript.life==0:
-		label.text="Try again"
+func _ready():
+	if GlobalScript.did_win:
+		label.text = "Long live the King!"
 	else:
-		label.text="you won"
+		label.text = "You have fallen..."
+	label.modulate.a = 0.0
+	create_tween().tween_property(label, "modulate:a", 1.0, 1.5)
+
+func _on_button_pressed():
+	GlobalScript.reset()
+	get_tree().change_scene_to_file("res://Scenes/start_screen.tscn")

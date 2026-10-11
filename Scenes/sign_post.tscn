@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bfrf8jtdq1voq"]
+[gd_scene load_steps=4 format=3 uid="uid://bfrf8jtdq1voq"]
 
 [ext_resource type="Script" uid="uid://0ynfqoyw6f8w" path="res://Scripts/sign_post.gd" id="1_yiwnc"]
+[ext_resource type="Texture2D" uid="uid://c8r00lvdrxp73" path="res://Assets/Buildings/Red Buildings/House1.png" id="2_ordlc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_st0hs"]
 radius = 12.0
@@ -15,5 +16,9 @@ title = "Works"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 0)
 shape = SubResource("CapsuleShape2D_st0hs")
+
+[node name="House1" type="Sprite2D" parent="."]
+position = Vector2(1, -47)
+texture = ExtResource("2_ordlc")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -32,7 +32,7 @@ func _on_quit_pressed() -> void:
 
 func _on_relics_book_pressed() -> void:
 	relics_menu.show()
-	print("ClIcked")
+
 
 
 func _on_close_pressed() -> void:

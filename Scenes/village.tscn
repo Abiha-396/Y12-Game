@@ -463,8 +463,8 @@ position = Vector2(142.663, 194.74)
 position = Vector2(33.2879, 130.257)
 
 [node name="Sign_post2" parent="Wood_cutting" instance=ExtResource("4_yf0b0")]
-position = Vector2(827, 302)
-message = "Press Space bar to take a swing. The journey is long, keep a-hold of it!"
+position = Vector2(713, 294)
+message = "Press Space bar to take a swing with the axe. Neither trees nor sheep can escape its sharp blade. \\nBeware of the fire that spwans from the Earth and spares no treader."
 title = "Collect wood"
 
 [node name="Buildings" type="TileMapLayer" parent="."]
@@ -484,4 +484,4 @@ position = Vector2(0, 44)
 shape = SubResource("RectangleShape2D_cibu2")
 
 [node name="SwordPickup" parent="Buildings/Monestry_door" instance=ExtResource("9_hsw83")]
-position = Vector2(63, 52)
+position = Vector2(-103, 80)

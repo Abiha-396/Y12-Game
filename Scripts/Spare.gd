@@ -31,7 +31,9 @@ func burn_cycle() -> void:
 		await get_tree().create_timer(respawn_time * randf_range(0.8, 1.2)).timeout
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	GlobalScript.life -= 1
+	if body.is_in_group("player"):
+		GlobalScript.damage()
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	GlobalScript.life -= 1
+	if area.get_parent().is_in_group("player"):
+		GlobalScript.damage()

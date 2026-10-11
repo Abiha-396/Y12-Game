@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://biv4a012y8o5c"
-path="res://.godot/imported/Slots.png-4d96c2adc86d8c53b6317ec49228d6b7.ctex"
+uid="uid://bxeq4yhk2cqpg"
+path="res://.godot/imported/Banner.png-abee89a9c19130c166cd33db3a67870c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI Elements/UI Banners from the store page/Banner/Slots.png"
-dest_files=["res://.godot/imported/Slots.png-4d96c2adc86d8c53b6317ec49228d6b7.ctex"]
+source_file="res://Assets/UI Elements/Banner/Banner.png"
+dest_files=["res://.godot/imported/Banner.png-abee89a9c19130c166cd33db3a67870c.ctex"]
 
 [params]
 
