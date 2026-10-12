@@ -7370,6 +7370,7 @@ scroll_offset = Vector2(-1318, 956)
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("2_n5262")]
 position = Vector2(132, 191)
 rotation = 0.0121796
+start_as_knight = false
 
 [node name="Decorations" type="TileMapLayer" parent="."]
 position = Vector2(20, 5)
@@ -7381,7 +7382,6 @@ collision_layer = 5
 collision_mask = 2
 script = ExtResource("16_wojlo")
 villagers = [NodePath("../Villager"), NodePath("../Villager5"), NodePath("../Villager2"), NodePath("../Villager3"), NodePath("../Villager4"), NodePath("../Villager6"), NodePath("../Villager7"), NodePath("../Villager8"), NodePath("../Villager9")]
-skip_boss_check = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Decorations/CastleTrigger"]
 position = Vector2(6584, 1492.5)
