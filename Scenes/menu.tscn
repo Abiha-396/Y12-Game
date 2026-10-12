@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=4 uid="uid://nit5bhfduqxp"]
+[gd_scene load_steps=94 format=4 uid="uid://nit5bhfduqxp"]
 
 [ext_resource type="Texture2D" uid="uid://dj8ir0b6jm0x0" path="res://Assets/Terrain/Tileset/Water Background color.png" id="1_158mb"]
 [ext_resource type="Script" uid="uid://chilx64jtr4vn" path="res://Scripts/menu.gd" id="1_wwsa2"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://cnweudhy8i6ec" path="res://Assets/Characters/Blue Units/Lancer/Lancer_UpRight_Defence.png" id="17_3p34a"]
 [ext_resource type="Texture2D" uid="uid://3q1mcpxdxctc" path="res://Assets/Characters/Blue Units/Lancer/Lancer_Up_Defence.png" id="18_owyel"]
 [ext_resource type="Texture2D" uid="uid://dxl5sjc0e1squ" path="res://Assets/Buildings/Red Buildings/Monastery.png" id="20_3p34a"]
+[ext_resource type="PackedScene" uid="uid://b20fw3mr316fi" path="res://Scenes/home_button.tscn" id="21_3p34a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q3rjx"]
 texture = ExtResource("2_wwsa2")
@@ -1171,6 +1172,13 @@ script = ExtResource("1_wwsa2")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 0
 follow_viewport_enabled = true
+
+[node name="Home_button" parent="CanvasLayer" instance=ExtResource("21_3p34a")]
+z_index = 100
+offset_left = 934.0
+offset_top = 54.0
+offset_right = 1072.0
+offset_bottom = 125.0
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
 offset_left = -6.0

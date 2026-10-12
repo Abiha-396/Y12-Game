@@ -27,7 +27,7 @@ func _on_home_pressed() -> void:
 
 
 func _on_quit_pressed() -> void:
-	get_tree().reload_current_scene()
+	get_tree().quit()
 
 
 func _on_relics_book_pressed() -> void:

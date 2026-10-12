@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://b20fw3mr316fi"]
+
+[ext_resource type="Script" uid="uid://xhv1adrv5ppi" path="res://Scripts/home_button.gd" id="1_teisf"]
+
+[node name="Home_button" type="Button"]
+offset_left = 503.0
+offset_top = 467.0
+offset_right = 627.0
+offset_bottom = 526.0
+theme_override_font_sizes/font_size = 45
+text = "Home
+"
+script = ExtResource("1_teisf")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
