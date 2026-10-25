@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://l6uf7eap3ef1"]
+[gd_scene load_steps=10 format=3 uid="uid://l6uf7eap3ef1"]
 
 [ext_resource type="Script" uid="uid://cv6pd3chh2prv" path="res://Scripts/audio_manager.gd" id="1_5kf6k"]
 [ext_resource type="AudioStream" uid="uid://cqdvsfm4l8v0x" path="res://Assets/Sounds/background.mp3" id="1_mjqhu"]
@@ -7,6 +7,8 @@
 [ext_resource type="AudioStream" uid="uid://cxhwng8au7l5e" path="res://Assets/Sounds/lose.mp3" id="4_lwpe1"]
 [ext_resource type="AudioStream" uid="uid://5bv6cabyriif" path="res://Assets/Sounds/run.mp3" id="5_jmilc"]
 [ext_resource type="AudioStream" uid="uid://bqal8q8sg3ajr" path="res://Assets/Sounds/swing.mp3" id="6_5nrbi"]
+[ext_resource type="AudioStream" uid="uid://datkyavg2ean5" path="res://Assets/Sounds/PanelOpen.mp3" id="8_lwpe1"]
+[ext_resource type="AudioStream" uid="uid://c8ghmoqcaw1gi" path="res://Assets/Sounds/PanelClose.mp3" id="9_jmilc"]
 
 [node name="AudioManager" type="Node2D"]
 script = ExtResource("1_5kf6k")
@@ -14,6 +16,7 @@ script = ExtResource("1_5kf6k")
 [node name="Background" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("1_mjqhu")
 volume_db = -10.0
+autoplay = true
 
 [node name="Battle" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_5kf6k")
@@ -30,3 +33,9 @@ volume_db = -10.0
 
 [node name="Swing" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_5nrbi")
+
+[node name="PanelOpen" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_lwpe1")
+
+[node name="PanelClose" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_jmilc")

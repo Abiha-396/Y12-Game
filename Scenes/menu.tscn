@@ -1182,6 +1182,7 @@ texture = ExtResource("1_158mb")
 
 [node name="Home_button" parent="CanvasLayer/TextureRect" instance=ExtResource("21_3p34a")]
 z_index = 100
+layout_mode = 0
 offset_left = 940.0
 offset_top = 53.0
 offset_right = 1078.0
